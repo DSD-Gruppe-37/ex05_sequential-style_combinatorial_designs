@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test_bench
-Wed Mar 25 16:49:10 2020
+Fri Mar 27 11:06:07 2020
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,11 +36,11 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Mar 25 16:49:10 2020               ;
+; Analysis & Synthesis Status        ; Failed - Fri Mar 27 11:06:07 2020               ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; test_bench                                      ;
 ; Top-level Entity Name              ; test_bench                                      ;
-; Family                             ; Cyclone IV GX                                   ;
+; Family                             ; Cyclone II                                      ;
 ; Total logic elements               ; N/A until Partition Merge                       ;
 ;     Total combinational functions  ; N/A until Partition Merge                       ;
 ;     Dedicated logic registers      ; N/A until Partition Merge                       ;
@@ -49,10 +49,6 @@ applicable agreement for further details.
 ; Total virtual pins                 ; N/A until Partition Merge                       ;
 ; Total memory bits                  ; N/A until Partition Merge                       ;
 ; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total GXB Receiver Channel PCS     ; N/A until Partition Merge                       ;
-; Total GXB Receiver Channel PMA     ; N/A until Partition Merge                       ;
-; Total GXB Transmitter Channel PCS  ; N/A until Partition Merge                       ;
-; Total GXB Transmitter Channel PMA  ; N/A until Partition Merge                       ;
 ; Total PLLs                         ; N/A until Partition Merge                       ;
 +------------------------------------+-------------------------------------------------+
 
@@ -62,9 +58,10 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
 ; Top-level entity name                                                      ; test_bench         ; test_bench         ;
-; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
-; Use smart compilation                                                      ; Off                ; Off                ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; On                 ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
 ; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
@@ -102,14 +99,12 @@ applicable agreement for further details.
 ; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
 ; Auto ROM Replacement                                                       ; On                 ; On                 ;
 ; Auto RAM Replacement                                                       ; On                 ; On                 ;
-; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
 ; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
 ; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
 ; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
 ; Strict RAM Replacement                                                     ; Off                ; Off                ;
 ; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
 ; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
-; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
 ; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
 ; Auto Resource Sharing                                                      ; Off                ; Off                ;
 ; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
@@ -117,7 +112,7 @@ applicable agreement for further details.
 ; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
 ; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
 ; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
 ; Report Parameter Settings                                                  ; On                 ; On                 ;
 ; Report Source Assignments                                                  ; On                 ; On                 ;
 ; Report Connectivity Checks                                                 ; On                 ; On                 ;
@@ -173,18 +168,44 @@ Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: programming logic devices manufactured by Altera and sold by 
     Info: Altera or its authorized distributors.  Please refer to the 
     Info: applicable agreement for further details.
-    Info: Processing started: Wed Mar 25 16:49:09 2020
+    Info: Processing started: Fri Mar 27 11:06:05 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off test_bench
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Warning (12125): Using design file test_bench.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+Info (12021): Found 2 design units, including 1 entities, in source file two_player_guess_game.vhd
+    Info (12022): Found design unit 1: two_player_guess_game-TwoPlayerGame
+    Info (12023): Found entity 1: two_player_guess_game
+Info (12021): Found 2 design units, including 1 entities, in source file test_bench.vhd
     Info (12022): Found design unit 1: test_bench-structural
     Info (12023): Found entity 1: test_bench
-Error (10482): VHDL error at test_bench.vhd(20): object "guess_game" is used but not declared File: C:/DSDLocal/Exercise05/test_bench.vhd Line: 20
-Error (10815): VHDL Scope error at test_bench.vhd(20): design unit "guess_game" is not visible in the present scope - you must refer to it with an expanded name such as "work.guess_game" File: C:/DSDLocal/Exercise05/test_bench.vhd Line: 20
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 2 errors, 2 warnings
-    Error: Peak virtual memory: 411 megabytes
-    Error: Processing ended: Wed Mar 25 16:49:10 2020
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:03
+Warning (12018): Entity "nand8" will be ignored because it conflicts with Quartus II primitive name
+Info (12021): Found 2 design units, including 1 entities, in source file nand8.vhd
+    Info (12022): Found design unit 1: nand8-behavioral
+Warning (12090): Entity "mux" obtained from "mux.vhd" instead of from Quartus II megafunction library
+Info (12021): Found 4 design units, including 1 entities, in source file mux.vhd
+    Info (12022): Found design unit 1: mux-muxFour
+    Info (12022): Found design unit 2: mux-muxTwo
+    Info (12022): Found design unit 3: mux-mux4In
+    Info (12023): Found entity 1: mux
+Info (12021): Found 2 design units, including 1 entities, in source file latch.vhd
+    Info (12022): Found design unit 1: guesslatch-latch
+    Info (12023): Found entity 1: guesslatch
+Info (12021): Found 2 design units, including 1 entities, in source file guess_game.vhd
+    Info (12022): Found design unit 1: guess_game-guessgame
+    Info (12023): Found entity 1: guess_game
+Info (12021): Found 2 design units, including 1 entities, in source file comparelogic.vhd
+    Info (12022): Found design unit 1: CompareLogic-compare
+    Info (12023): Found entity 1: CompareLogic
+Info (12021): Found 2 design units, including 1 entities, in source file bin2sevenseg.vhd
+    Info (12022): Found design unit 1: bin2hex-behavioral
+    Info (12023): Found entity 1: bin2hex
+Error (10482): VHDL error at two_player_guess_game.vhd(87): object "hex1" is used but not declared File: C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/two_player_guess_game.vhd Line: 87
+Error (10558): VHDL error at two_player_guess_game.vhd(87): cannot associate formal port "o" of mode "out" with an expression File: C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/two_player_guess_game.vhd Line: 87
+Error (10482): VHDL error at two_player_guess_game.vhd(88): object "hex10" is used but not declared File: C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/two_player_guess_game.vhd Line: 88
+Error (10558): VHDL error at two_player_guess_game.vhd(88): cannot associate formal port "o" of mode "out" with an expression File: C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/two_player_guess_game.vhd Line: 88
+Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 4 errors, 3 warnings
+    Error: Peak virtual memory: 383 megabytes
+    Error: Processing ended: Fri Mar 27 11:06:07 2020
+    Error: Elapsed time: 00:00:02
+    Error: Total CPU time (on all processors): 00:00:02
 
 
