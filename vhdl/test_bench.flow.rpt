@@ -1,5 +1,5 @@
 Flow report for test_bench
-Wed Apr 01 10:14:44 2020
+Wed Apr 01 12:04:16 2020
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,22 +40,22 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Wed Apr 01 10:14:44 2020           ;
+; Flow Status                        ; Flow Failed - Wed Apr 01 12:04:16 2020          ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; test_bench                                      ;
 ; Top-level Entity Name              ; test_bench                                      ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 136 / 33,216 ( < 1 % )                          ;
-;     Total combinational functions  ; 136 / 33,216 ( < 1 % )                          ;
-;     Dedicated logic registers      ; 0 / 33,216 ( 0 % )                              ;
-; Total registers                    ; 0                                               ;
-; Total pins                         ; 96 / 475 ( 20 % )                               ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
-; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
+; Total logic elements               ; N/A until Partition Merge                       ;
+;     Total combinational functions  ; N/A until Partition Merge                       ;
+;     Dedicated logic registers      ; N/A until Partition Merge                       ;
+; Total registers                    ; N/A until Partition Merge                       ;
+; Total pins                         ; N/A until Partition Merge                       ;
+; Total virtual pins                 ; N/A until Partition Merge                       ;
+; Total memory bits                  ; N/A until Partition Merge                       ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
+; Total PLLs                         ; N/A until Partition Merge                       ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/01/2020 10:14:18 ;
+; Start date & time ; 04/01/2020 12:04:15 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; test_bench          ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 168202119214427.158572885726272       ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 168202119214427.158573545503464       ; --            ; --          ; --         ;
 ; FLOW_ENABLE_RTL_VIEWER              ; On                                    ; Off           ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
@@ -92,10 +92,8 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 394 MB              ; 00:00:05                           ;
-; Fitter               ; 00:00:13     ; 1.0                     ; 510 MB              ; 00:00:10                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 367 MB              ; 00:00:04                           ;
-; Total                ; 00:00:25     ; --                      ; --                  ; 00:00:19                           ;
+; Analysis & Synthesis ; 00:00:02     ; 1.0                     ; 383 MB              ; 00:00:02                           ;
+; Total                ; 00:00:02     ; --                      ; --                  ; 00:00:02                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -105,8 +103,6 @@ applicable agreement for further details.
 ; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +----------------------+------------------+-----------+------------+----------------+
 ; Analysis & Synthesis ; LAPTOP-PME5T7P1  ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter               ; LAPTOP-PME5T7P1  ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler            ; LAPTOP-PME5T7P1  ; Windows 7 ; 6.2        ; x86_64         ;
 +----------------------+------------------+-----------+------------+----------------+
 
 
@@ -114,9 +110,6 @@ applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map test_bench --read_settings_files=on --write_settings_files=off
-quartus_fit test_bench --read_settings_files=on --write_settings_files=off
-quartus_asm test_bench --read_settings_files=on --write_settings_files=off
-quartus_eda test_bench --read_settings_files=on --write_settings_files=off
 
 
 

@@ -34,7 +34,7 @@ BEGIN
             Sseg(6 DOWNTO 0) => bin2hexOut(6 DOWNTO 0)
         );
 
-    displayTens : ENTITY bin2hex(Behavioral)
+    displayTens : ENTITY bin2hex(BlankZero)
         PORT
         MAP
         (

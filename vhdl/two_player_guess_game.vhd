@@ -38,7 +38,7 @@ BEGIN
         PORT MAP
         (
             -- INPUTS
-            bin(0) => (playerSel),
+            bin(0) => playerSel,
             -- OUTPUTS
             Sseg   => hexPlayer
         );

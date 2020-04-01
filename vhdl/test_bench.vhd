@@ -5,7 +5,6 @@ USE work.ALL;
 ENTITY test_bench IS
     PORT
     (
-
         SW   : IN std_logic_vector(17 DOWNTO 0);
         KEY  : IN std_logic_vector(3 DOWNTO 0);
         HEX0 : OUT std_logic_vector(6 DOWNTO 0);
@@ -23,18 +22,26 @@ END;
 ARCHITECTURE structural OF test_bench IS
 BEGIN
 
-    TwoPlayerGuessGame : ENTITY two_player_guess_game
-        PORT MAP
-        (
-            inputs    => SW(7 DOWNTO 0),   -- inputs
-            playerSel => SW(17),           -- Player Select
-            set       => key(3),           -- set predef. vals.
-            show      => key(1),           -- show predef. vals.
-            try       => key(0),           -- eval. guess
-            hexPlayer => HEX7(6 DOWNTO 0), -- 7-seg ones
-            hexOnes   => HEX0(6 DOWNTO 0), -- 7-seg ones
-            hexTens   => HEX1(6 DOWNTO 0)  -- 7-seg tens
-        );
+    --- Turn off HEX (Active low...)
+    HEX2 <= ("1111111");
+    HEX3 <= ("1111111");
+    HEX4 <= ("1111111");
+    HEX5 <= ("1111111");
+    HEX7 <= ("0001100");
+    ---
+
+    -- TwoPlayerGuessGame : ENTITY two_player_guess_game
+    --     PORT MAP
+    --     (
+    --         inputs    => SW(7 DOWNTO 0),   -- inputs
+    --         playerSel => SW(17),           -- Player Select
+    --         set       => key(3),           -- set predef. vals.
+    --         show      => key(1),           -- show predef. vals.
+    --         try       => key(0),           -- eval. guess
+    --         hexPlayer => HEX6(6 DOWNTO 0), -- 7-seg ones
+    --         hexOnes   => HEX0(6 DOWNTO 0), -- 7-seg ones
+    --         hexTens   => HEX1(6 DOWNTO 0)  -- 7-seg tens
+    --     );
 
     -- GuessGame : ENTITY guess_game
     --     PORT MAP
@@ -54,7 +61,15 @@ BEGIN
     --         bin(3 DOWNTO 0)  => SW(3 DOWNTO 0),
     --         -- OUTPUTS
     --         Sseg(6 DOWNTO 0) => HEX0(6 DOWNTO 0)
-    --     );
+    --     );   
+    Count1s : ENTITY CountOnes(Counts)
+        PORT MAP
+        (
+            -- INPUTS
+            in1(7 DOWNTO 0)  => SW(7 DOWNTO 0),
+            -- OUTPUTS
+            out1(6 DOWNTO 0) => HEX0(6 DOWNTO 0)
+        );
 
     -- LatchEnt : ENTITY guesslatch(latch)
     --     PORT MAP
@@ -98,5 +113,14 @@ BEGIN
     --         -- OUTPUTS
     --         o        => Dummy(31 DOWNTO 11)
     --     );
+
+    UUT1 : ENTITY nand_8(genericType)
+        PORT MAP
+        (
+            -- INPUTS         
+            a(7 DOWNTO 0) => SW(7 DOWNTO 0),
+            -- OUTPUTS
+            y             => LEDR(0)
+        );
 
 END;
