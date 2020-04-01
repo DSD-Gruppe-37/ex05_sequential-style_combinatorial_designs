@@ -1,14 +1,14 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
-USE ieee.numeric_std.ALL;
 
 ENTITY bin2hex IS
-    PORT (
-        bin  : IN std_logic_vector(3 DOWNTO 0);
-        Sseg : OUT std_logic_vector(6 DOWNTO 0)
+    PORT
+    (
+        bin  : IN std_logic_vector(3 DOWNTO 0); -- Binary input
+        Sseg : OUT std_logic_vector(6 DOWNTO 0) -- 7 segment output
     );
 END bin2hex;
---- Behavioral method
+
 ARCHITECTURE behavioral OF bin2hex IS
 BEGIN
     binProcess : PROCESS (bin)
@@ -30,7 +30,7 @@ BEGIN
             WHEN "1101" => Sseg <= "0100001"; -- D
             WHEN "1110" => Sseg <= "0000110"; -- E
             WHEN "1111" => Sseg <= "0001110"; -- F
-            WHEN OTHERS => Sseg <= "-------"; -- blank
+            WHEN OTHERS => Sseg <= "1001001"; -- //Error display//
         END CASE;
     END PROCESS; -- binProcess
 END behavioral;

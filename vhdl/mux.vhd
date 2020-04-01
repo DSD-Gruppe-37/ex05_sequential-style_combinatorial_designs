@@ -1,5 +1,9 @@
+-------------------------------------------------------------------------------------------
+-- Multiplexers
+-------------------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
+
 ENTITY mux IS
     PORT
     (
@@ -19,15 +23,10 @@ ENTITY mux IS
     );
 END mux;
 
--- Mux 4-1 - Outputs "Lo","--","Hi", "[INPUT]".
+-------------------------------------------------------------------------------------------
+-- Mux 4-1
+-------------------------------------------------------------------------------------------
 ARCHITECTURE muxFour OF mux IS
-
-    -- inSelect = Enable
-    ----
-    -- inSelect = "01" DISPLAY: --- "01"
-    -- inSelect = "11" DISPLAY: HI "11"
-    -- inSelect = "00" DISPLAY: LO "00"
-    -- inSelect = "--" DISPLAY: Input from 2 x bin2hex
 
 BEGIN
     muxProcess : PROCESS (inSelect, inA)
@@ -42,12 +41,10 @@ BEGIN
     END PROCESS; -- muxProcess
 END muxFour; -- muxFour
 
+-------------------------------------------------------------------------------------------
 -- Mux 2-1
+-------------------------------------------------------------------------------------------
 ARCHITECTURE muxTwo OF mux IS
-
-    -- inSelect = Enable
-    -- inSelect = "1" DISPLAY: User input
-    -- inSelect = "0" DISPLAY: Latch output
 
 BEGIN
     muxProcess : PROCESS (inSelect(0), inA, inB)
@@ -59,11 +56,10 @@ BEGIN
         END CASE;
     END PROCESS; -- muxProcess
 END muxTwo;  -- muxTwo
---- Mux 1 in (4 inputs)  2 out (8 outputs)
 
--- inSelect = Enable
--- inSelect = "0" DISPLAY: Player 1
--- inSelect = "1" DISPLAY: Player 2
+-------------------------------------------------------------------------------------------
+-- Mux 1-2
+-------------------------------------------------------------------------------------------
 ARCHITECTURE mux4In OF mux IS
 BEGIN
 
@@ -71,25 +67,15 @@ BEGIN
     BEGIN
 
         IF (inSelect(0) = '0') THEN
-
-            o(0)  <= inA(0);
-            o1(0) <= inB(0);
+            o(0)           <= inA(0);
+            o1(0)          <= inB(0);
             o2(7 DOWNTO 0) <= inC(7 DOWNTO 0);
-            o3(0) <= inD(0);
+            o3(0)          <= inD(0);
         ELSIF (inSelect(0) = '1') THEN
-            o4(0) <= inA(0);
-            o5(0) <= inB(0);
+            o4(0)          <= inA(0);
+            o5(0)          <= inB(0);
             o6(7 DOWNTO 0) <= inC(7 DOWNTO 0);
-            o7(0) <= inD(0);
-
+            o7(0)          <= inD(0);
         END IF;
     END PROCESS;
-    -- muxProcess : PROCESS (inSelect(0), inA(0), inB(0), inC(7 DOWNTO 0), inD(0))
-    -- BEGIN
-    --     CASE(inSelect(0)) IS
-    --         WHEN '0'    => o(7 DOWNTO 0)    <= inB(7 DOWNTO 0); --  
-    --         WHEN '1'    => o(7 DOWNTO 0)    <= inA(7 DOWNTO 0);-- 
-    --         WHEN OTHERS => o(7 DOWNTO 0) <= inA(7 DOWNTO 0);--
-    --     END CASE;
-    -- END PROCESS; -- muxProcess
 END mux4In; -- mux4In

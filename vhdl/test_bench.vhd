@@ -5,8 +5,11 @@ USE work.ALL;
 ENTITY test_bench IS
     PORT
     (
+
         SW   : IN std_logic_vector(17 DOWNTO 0);
         KEY  : IN std_logic_vector(3 DOWNTO 0);
+        HEX0 : OUT std_logic_vector(6 DOWNTO 0);
+        HEX1 : OUT std_logic_vector(6 DOWNTO 0);
         HEX4 : OUT std_logic_vector(6 DOWNTO 0);
         HEX6 : OUT std_logic_vector(6 DOWNTO 0);
         HEX7 : OUT std_logic_vector(6 DOWNTO 0);
@@ -17,31 +20,31 @@ END;
 ARCHITECTURE structural OF test_bench IS
 BEGIN
 
-    TwoPlayerGuessGame : ENTITY two_player_guess_game
-        PORT MAP
-        (
-            inputs    => SW(7 DOWNTO 0),   -- inputs
-            playerSel => SW(17),           -- Player Select
-            set       => key(3),           -- set predef. vals.
-            show      => key(1),           -- show predef. vals.
-            try       => key(0),           -- eval. guess
-            hexPlayer => HEX4(6 DOWNTO 0), -- 7-seg ones
-            hexOnes      => HEX6(6 DOWNTO 0), -- 7-seg ones
-            hexTens     => HEX7(6 DOWNTO 0)  -- 7-seg tens
-        );
-
-    -- GuessGame : ENTITY guess_game
+    -- TwoPlayerGuessGame : ENTITY two_player_guess_game
     --     PORT MAP
     --     (
-    --     inputs => SW(7 DOWNTO 0),   -- inputs
-    --     set    => key(3),           -- set predef. vals.
-    --     show   => key(1),           -- show predef. vals.
-    --     try    => key(0),           -- eval. guess
-    --     hex1   => HEX6(6 DOWNTO 0), -- 7-seg ones
-    --     hex10  => HEX7(6 DOWNTO 0)  -- 7-seg tens
+    --         inputs    => SW(7 DOWNTO 0),   -- inputs
+    --         playerSel => SW(17),           -- Player Select
+    --         set       => key(3),           -- set predef. vals.
+    --         show      => key(1),           -- show predef. vals.
+    --         try       => key(0),           -- eval. guess
+    --         hexPlayer => HEX4(6 DOWNTO 0), -- 7-seg ones
+    --         hexOnes      => HEX6(6 DOWNTO 0), -- 7-seg ones
+    --         hexTens     => HEX7(6 DOWNTO 0)  -- 7-seg tens
     --     );
 
-    -- UUT0 : ENTITY bin2hex(Behavioral)
+    GuessGame : ENTITY guess_game
+        PORT MAP
+        (
+        inputs => SW(7 DOWNTO 0),   -- inputs
+        set    => key(3),           -- set predef. vals.
+        show   => key(1),           -- show predef. vals.
+        try    => key(0),           -- eval. guess
+        hex1   => HEX6(6 DOWNTO 0), -- 7-seg ones
+        hex10  => HEX7(6 DOWNTO 0)  -- 7-seg tens
+        );
+
+    -- Hexdisplay : ENTITY bin2hex(Behavioral)
     --     PORT MAP
     --     (
     --         -- INPUTS
@@ -50,7 +53,7 @@ BEGIN
     --         Sseg(6 DOWNTO 0) => HEX0(6 DOWNTO 0)
     --     );
 
-    -- UUT1 : ENTITY guesslatch(latch)
+    -- LatchEnt : ENTITY guesslatch(latch)
     --     PORT MAP
     --     (
     --         -- INPUTS         
@@ -60,7 +63,7 @@ BEGIN
     --         q  => LEDR(7 DOWNTO 0) -- Dummy 7;0
     --     );
 
-    -- UUT2 : ENTITY CompareLogic(compare)
+    -- CompareEnt : ENTITY CompareLogic(compare)
     --     PORT MAP
     --     (
     --         -- INPUTS         
@@ -71,7 +74,7 @@ BEGIN
     --         o     => LEDR(9 DOWNTO 8) -- Dummy 9;8
     --     );
 
-    -- UUT3 : ENTITY muxFour
+    -- MuxFourEnt : ENTITY muxFour
     --     PORT MAP
     --     (
     --         -- INPUTS         
@@ -82,7 +85,7 @@ BEGIN
     --         o        => LEDR(23 DOWNTO 10)
     --     );
 
-    -- UUT4 : ENTITY muxTwo
+    -- MuxTwoEnt : ENTITY muxTwo
     --     PORT MAP
     --     (
     --         -- INPUTS         

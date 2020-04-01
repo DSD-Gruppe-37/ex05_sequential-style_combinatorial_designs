@@ -9,8 +9,8 @@ ENTITY two_player_guess_game IS
         set       : IN std_logic;                     -- set predef. vals.
         show      : IN std_logic;                     -- show predef. vals.
         try       : IN std_logic;                     -- eval. guess
-        hexOnes      : OUT std_logic_vector(6 DOWNTO 0); -- 7-seg ones
-        hexTens     : OUT std_logic_vector(6 DOWNTO 0); -- 7-seg tens
+        hexOnes   : OUT std_logic_vector(6 DOWNTO 0); -- 7-seg ones
+        hexTens   : OUT std_logic_vector(6 DOWNTO 0); -- 7-seg tens
         hexPlayer : OUT std_logic_vector(6 DOWNTO 0)  -- 7-seg player
     );
 END two_player_guess_game;
@@ -46,7 +46,7 @@ BEGIN
     --------------------
     --- Player games ---
     --------------------
-    PlayerOne : ENTITY guess_game
+    playerOneGame : ENTITY guess_game
         PORT
         MAP
         (
@@ -58,7 +58,7 @@ BEGIN
         hex1  => p1Output(6 DOWNTO 0),
         hex10 => p1Output(13 DOWNTO 7)
         );
-    PlayerTwo : ENTITY guess_game
+    playerTwoGame : ENTITY guess_game
         PORT
         MAP
         (
@@ -84,28 +84,28 @@ BEGIN
         inC(7 DOWNTO 0) => inputs,
         inD(0)          => try,
         -- OUTPUTS
-            o(0)  ;
-            o1(0);
-            o2(7 DOWNTO 0)
-            o3(0) 
-            o4(0)
-            o5(0)
-            o6(7 DOWNTO 0)
-            o7(0);
-
-    MultiplexTwoOne : ENTITY mux(muxTwo)
+        o(0)            => OPEN,
+        o1(0)           => OPEN,
+        o2(7 DOWNTO 0)  => OPEN,
+        o3(0)           => OPEN,
+        o4(0)           => OPEN,
+        o5(0)           => OPEN,
+        o6(7 DOWNTO 0)  => OPEN,
+        o7(0)           => OPEN
+        );
+    MultiplexShowPlayer : ENTITY mux(muxTwo)
         PORT
         MAP
         (
         -- INPUTS         
-        inSelect(0)     => playerSel,
+        inSelect(0)      => playerSel,
         inA(13 DOWNTO 0) => p1Output,
         inB(13 DOWNTO 0) => p2Output,
         inC => (OTHERS => '0'),
         inD => (OTHERS => '0'),
         -- OUTPUTS
-        o(6 DOWNTO 0)   => hexOnes(6 DOWNTO 0),
-        o(13 DOWNTO 7)  => hexTens(6 DOWNTO 0)
+        o(6 DOWNTO 0)    => hexOnes(6 DOWNTO 0),
+        o(13 DOWNTO 7)   => hexTens(6 DOWNTO 0)
         );
 
 END TwoPlayerGame; -- TwoPlayerGame

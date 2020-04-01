@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test_bench
-Fri Mar 27 11:06:07 2020
+Wed Apr 01 07:53:10 2020
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,7 +10,16 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "guess_game:GuessGame|mux:MultiplexTwoOne"
+ 12. Port Connectivity Checks: "guess_game:GuessGame|mux:MultiplexFourOne"
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +45,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri Mar 27 11:06:07 2020               ;
+; Analysis & Synthesis Status        ; Successful - Wed Apr 01 07:53:10 2020           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; test_bench                                      ;
 ; Top-level Entity Name              ; test_bench                                      ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 69                                              ;
+;     Total combinational functions  ; 69                                              ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 75                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -149,6 +158,156 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; two_player_guess_game.vhd        ; yes             ; User VHDL File  ; C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/two_player_guess_game.vhd ;         ;
+; test_bench.vhd                   ; yes             ; User VHDL File  ; C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/test_bench.vhd            ;         ;
+; nand8.vhd                        ; yes             ; User VHDL File  ; C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/nand8.vhd                 ;         ;
+; mux.vhd                          ; yes             ; User VHDL File  ; C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/mux.vhd                   ;         ;
+; latch.vhd                        ; yes             ; User VHDL File  ; C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/latch.vhd                 ;         ;
+; guess_game.vhd                   ; yes             ; User VHDL File  ; C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/guess_game.vhd            ;         ;
+; CompareLogic.vhd                 ; yes             ; User VHDL File  ; C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/CompareLogic.vhd          ;         ;
+; bin2sevenseg.vhd                 ; yes             ; User VHDL File  ; C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/bin2sevenseg.vhd          ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 69     ;
+;                                             ;        ;
+; Total combinational functions               ; 69     ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 35     ;
+;     -- 3 input functions                    ; 30     ;
+;     -- <=2 input functions                  ; 4      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 55     ;
+;     -- arithmetic mode                      ; 14     ;
+;                                             ;        ;
+; Total registers                             ; 0      ;
+;     -- Dedicated logic registers            ; 0      ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 75     ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+; Maximum fan-out node                        ; KEY[0] ;
+; Maximum fan-out                             ; 15     ;
+; Total fan-out                               ; 252    ;
+; Average fan-out                             ; 1.75   ;
++---------------------------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                             ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
+; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Library Name ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
+; |test_bench                  ; 69 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 75   ; 0            ; |test_bench                                           ; work         ;
+;    |guess_game:GuessGame|    ; 69 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|guess_game:GuessGame                      ; work         ;
+;       |CompareLogic:Compare| ; 21 (21)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|guess_game:GuessGame|CompareLogic:Compare ; work         ;
+;       |bin2hex:displayOnes|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|guess_game:GuessGame|bin2hex:displayOnes  ; work         ;
+;       |bin2hex:displayTens|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|guess_game:GuessGame|bin2hex:displayTens  ; work         ;
+;       |guesslatch:Latcher|   ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|guess_game:GuessGame|guesslatch:Latcher   ; work         ;
+;       |mux:MultiplexFourOne| ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|guess_game:GuessGame|mux:MultiplexFourOne ; work         ;
+;       |mux:MultiplexTwoOne|  ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|guess_game:GuessGame|mux:MultiplexTwoOne  ; work         ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; guess_game:GuessGame|guesslatch:Latcher|qsig[0]    ; KEY[3]              ; yes                    ;
+; guess_game:GuessGame|guesslatch:Latcher|qsig[1]    ; KEY[3]              ; yes                    ;
+; guess_game:GuessGame|guesslatch:Latcher|qsig[2]    ; KEY[3]              ; yes                    ;
+; guess_game:GuessGame|guesslatch:Latcher|qsig[3]    ; KEY[3]              ; yes                    ;
+; guess_game:GuessGame|guesslatch:Latcher|qsig[4]    ; KEY[3]              ; yes                    ;
+; guess_game:GuessGame|guesslatch:Latcher|qsig[5]    ; KEY[3]              ; yes                    ;
+; guess_game:GuessGame|guesslatch:Latcher|qsig[6]    ; KEY[3]              ; yes                    ;
+; guess_game:GuessGame|guesslatch:Latcher|qsig[7]    ; KEY[3]              ; yes                    ;
+; Number of user-specified and inferred latches = 8  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |test_bench|guess_game:GuessGame|mux:MultiplexFourOne|Mux11 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "guess_game:GuessGame|mux:MultiplexTwoOne"                                               ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; inc      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; ind      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; o[13..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o1       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o2       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o3       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o4       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o5       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o6       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o7       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "guess_game:GuessGame|mux:MultiplexFourOne"                                          ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; inb  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; inc  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; ind  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; o1   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o2   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o3   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o4   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o5   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o6   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o7   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
@@ -168,8 +327,8 @@ Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: programming logic devices manufactured by Altera and sold by 
     Info: Altera or its authorized distributors.  Please refer to the 
     Info: applicable agreement for further details.
-    Info: Processing started: Fri Mar 27 11:06:05 2020
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off test_bench
+    Info: Processing started: Wed Apr 01 07:53:08 2020
+Info: Command: quartus_map test_bench --read_settings_files=on --write_settings_files=off
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file two_player_guess_game.vhd
     Info (12022): Found design unit 1: two_player_guess_game-TwoPlayerGame
@@ -179,7 +338,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file test_be
     Info (12023): Found entity 1: test_bench
 Warning (12018): Entity "nand8" will be ignored because it conflicts with Quartus II primitive name
 Info (12021): Found 2 design units, including 1 entities, in source file nand8.vhd
-    Info (12022): Found design unit 1: nand8-behavioral
+    Info (12022): Found design unit 1: nand8-genericType
 Warning (12090): Entity "mux" obtained from "mux.vhd" instead of from Quartus II megafunction library
 Info (12021): Found 4 design units, including 1 entities, in source file mux.vhd
     Info (12022): Found design unit 1: mux-muxFour
@@ -198,14 +357,107 @@ Info (12021): Found 2 design units, including 1 entities, in source file compare
 Info (12021): Found 2 design units, including 1 entities, in source file bin2sevenseg.vhd
     Info (12022): Found design unit 1: bin2hex-behavioral
     Info (12023): Found entity 1: bin2hex
-Error (10482): VHDL error at two_player_guess_game.vhd(87): object "hex1" is used but not declared File: C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/two_player_guess_game.vhd Line: 87
-Error (10558): VHDL error at two_player_guess_game.vhd(87): cannot associate formal port "o" of mode "out" with an expression File: C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/two_player_guess_game.vhd Line: 87
-Error (10482): VHDL error at two_player_guess_game.vhd(88): object "hex10" is used but not declared File: C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/two_player_guess_game.vhd Line: 88
-Error (10558): VHDL error at two_player_guess_game.vhd(88): cannot associate formal port "o" of mode "out" with an expression File: C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/two_player_guess_game.vhd Line: 88
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 4 errors, 3 warnings
-    Error: Peak virtual memory: 383 megabytes
-    Error: Processing ended: Fri Mar 27 11:06:07 2020
-    Error: Elapsed time: 00:00:02
-    Error: Total CPU time (on all processors): 00:00:02
+Info (12127): Elaborating entity "test_bench" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at test_bench.vhd(11): used implicit default value for signal "HEX0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at test_bench.vhd(12): used implicit default value for signal "HEX1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at test_bench.vhd(13): used implicit default value for signal "HEX4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at test_bench.vhd(16): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12128): Elaborating entity "guess_game" for hierarchy "guess_game:GuessGame"
+Critical Warning (10920): VHDL Incomplete Partial Association warning at guess_game.vhd(82): port or argument "inSelect" has 1/2 unassociated elements
+Critical Warning (10920): VHDL Incomplete Partial Association warning at guess_game.vhd(82): port or argument "inA" has 6/14 unassociated elements
+Critical Warning (10920): VHDL Incomplete Partial Association warning at guess_game.vhd(82): port or argument "inB" has 6/14 unassociated elements
+Critical Warning (10920): VHDL Incomplete Partial Association warning at guess_game.vhd(82): port or argument "o" has 6/14 unassociated elements
+Info (12129): Elaborating entity "bin2hex" using architecture "A:behavioral" for hierarchy "guess_game:GuessGame|bin2hex:displayOnes"
+Info (12128): Elaborating entity "guesslatch" for hierarchy "guess_game:GuessGame|guesslatch:Latcher"
+Warning (10631): VHDL Process Statement warning at latch.vhd(18): inferring latch(es) for signal or variable "qsig", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "qsig[0]" at latch.vhd(18)
+Info (10041): Inferred latch for "qsig[1]" at latch.vhd(18)
+Info (10041): Inferred latch for "qsig[2]" at latch.vhd(18)
+Info (10041): Inferred latch for "qsig[3]" at latch.vhd(18)
+Info (10041): Inferred latch for "qsig[4]" at latch.vhd(18)
+Info (10041): Inferred latch for "qsig[5]" at latch.vhd(18)
+Info (10041): Inferred latch for "qsig[6]" at latch.vhd(18)
+Info (10041): Inferred latch for "qsig[7]" at latch.vhd(18)
+Info (12129): Elaborating entity "CompareLogic" using architecture "A:compare" for hierarchy "guess_game:GuessGame|CompareLogic:Compare"
+Info (12129): Elaborating entity "mux" using architecture "A:muxfour" for hierarchy "guess_game:GuessGame|mux:MultiplexFourOne"
+Warning (10873): Using initial value X (don't care) for net "o1" at mux.vhd(16)
+Warning (10873): Using initial value X (don't care) for net "o2" at mux.vhd(17)
+Warning (10873): Using initial value X (don't care) for net "o3" at mux.vhd(18)
+Warning (10873): Using initial value X (don't care) for net "o4" at mux.vhd(19)
+Warning (10873): Using initial value X (don't care) for net "o5" at mux.vhd(20)
+Warning (10873): Using initial value X (don't care) for net "o6" at mux.vhd(21)
+Warning (10873): Using initial value X (don't care) for net "o7" at mux.vhd(22)
+Info (12129): Elaborating entity "mux" using architecture "A:muxtwo" for hierarchy "guess_game:GuessGame|mux:MultiplexTwoOne"
+Warning (10873): Using initial value X (don't care) for net "o[13..8]" at mux.vhd(15)
+Warning (10873): Using initial value X (don't care) for net "o1" at mux.vhd(16)
+Warning (10873): Using initial value X (don't care) for net "o2" at mux.vhd(17)
+Warning (10873): Using initial value X (don't care) for net "o3" at mux.vhd(18)
+Warning (10873): Using initial value X (don't care) for net "o4" at mux.vhd(19)
+Warning (10873): Using initial value X (don't care) for net "o5" at mux.vhd(20)
+Warning (10873): Using initial value X (don't care) for net "o6" at mux.vhd(21)
+Warning (10873): Using initial value X (don't care) for net "o7" at mux.vhd(22)
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[0]" is stuck at GND
+    Warning (13410): Pin "HEX0[1]" is stuck at GND
+    Warning (13410): Pin "HEX0[2]" is stuck at GND
+    Warning (13410): Pin "HEX0[3]" is stuck at GND
+    Warning (13410): Pin "HEX0[4]" is stuck at GND
+    Warning (13410): Pin "HEX0[5]" is stuck at GND
+    Warning (13410): Pin "HEX0[6]" is stuck at GND
+    Warning (13410): Pin "HEX1[0]" is stuck at GND
+    Warning (13410): Pin "HEX1[1]" is stuck at GND
+    Warning (13410): Pin "HEX1[2]" is stuck at GND
+    Warning (13410): Pin "HEX1[3]" is stuck at GND
+    Warning (13410): Pin "HEX1[4]" is stuck at GND
+    Warning (13410): Pin "HEX1[5]" is stuck at GND
+    Warning (13410): Pin "HEX1[6]" is stuck at GND
+    Warning (13410): Pin "HEX4[0]" is stuck at GND
+    Warning (13410): Pin "HEX4[1]" is stuck at GND
+    Warning (13410): Pin "HEX4[2]" is stuck at GND
+    Warning (13410): Pin "HEX4[3]" is stuck at GND
+    Warning (13410): Pin "HEX4[4]" is stuck at GND
+    Warning (13410): Pin "HEX4[5]" is stuck at GND
+    Warning (13410): Pin "HEX4[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND
+    Warning (13410): Pin "LEDR[1]" is stuck at GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND
+    Warning (13410): Pin "LEDR[4]" is stuck at GND
+    Warning (13410): Pin "LEDR[5]" is stuck at GND
+    Warning (13410): Pin "LEDR[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+    Warning (13410): Pin "LEDR[10]" is stuck at GND
+    Warning (13410): Pin "LEDR[11]" is stuck at GND
+    Warning (13410): Pin "LEDR[12]" is stuck at GND
+    Warning (13410): Pin "LEDR[13]" is stuck at GND
+    Warning (13410): Pin "LEDR[14]" is stuck at GND
+    Warning (13410): Pin "LEDR[15]" is stuck at GND
+    Warning (13410): Pin "LEDR[16]" is stuck at GND
+    Warning (13410): Pin "LEDR[17]" is stuck at GND
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 11 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
+    Warning (15610): No output dependent on input pin "SW[10]"
+    Warning (15610): No output dependent on input pin "SW[11]"
+    Warning (15610): No output dependent on input pin "SW[12]"
+    Warning (15610): No output dependent on input pin "SW[13]"
+    Warning (15610): No output dependent on input pin "SW[14]"
+    Warning (15610): No output dependent on input pin "SW[15]"
+    Warning (15610): No output dependent on input pin "SW[16]"
+    Warning (15610): No output dependent on input pin "SW[17]"
+    Warning (15610): No output dependent on input pin "KEY[2]"
+Info (21057): Implemented 144 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 22 input pins
+    Info (21059): Implemented 53 output pins
+    Info (21061): Implemented 69 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 79 warnings
+    Info: Peak virtual memory: 399 megabytes
+    Info: Processing ended: Wed Apr 01 07:53:10 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 
