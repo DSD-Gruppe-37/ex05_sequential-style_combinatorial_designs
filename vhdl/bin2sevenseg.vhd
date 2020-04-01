@@ -1,6 +1,6 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
-
+USE work.ALL;
 ENTITY bin2hex IS
     PORT
     (
@@ -30,7 +30,7 @@ BEGIN
             WHEN "1101" => Sseg <= "0100001"; -- D
             WHEN "1110" => Sseg <= "0000110"; -- E
             WHEN "1111" => Sseg <= "0001110"; -- F
-            WHEN OTHERS => Sseg <= "1001001"; -- //Error display//
+            WHEN OTHERS => Sseg <= "-------"; -- //Error display//
         END CASE;
     END PROCESS; -- binProcess
 END behavioral;

@@ -1,7 +1,7 @@
 LIBRARY IEEE;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
-
+USE work.ALL;
 ENTITY CompareLogic IS
     PORT
     (

@@ -15,13 +15,13 @@ PROJECT=test_bench
 all: 
 	$(QBIN)/quartus_map $(PROJECT) 	--read_settings_files=on \
 																	--write_settings_files=off $(FASTMAP)  
-	$(QBIN)/quartus_fit $(PROJECT) 	--read_settings_files=off \
+	$(QBIN)/quartus_fit $(PROJECT) 	--read_settings_files=on \
 																 	--write_settings_files=off $(FASTFIT)
-	$(QBIN)/quartus_asm $(PROJECT) 	--read_settings_files=off \
+	$(QBIN)/quartus_asm $(PROJECT) 	--read_settings_files=on \
 																	--write_settings_files=off
 	@# NOTE: sta stage skipped
 	@#$(QBIN)/quartus_sta $(PROJECT) 
-	$(QBIN)/quartus_eda $(PROJECT) 	--read_settings_files=off \
+	$(QBIN)/quartus_eda $(PROJECT) 	--read_settings_files=on \
 																	--write_settings_files=off
 
 srcok:
@@ -43,7 +43,7 @@ timing:
 .PHONY=program
 program:
 	# NOTE: not testet yet
-	$(QBIN)/quartus_pgm --no_banner --mode=jtag -o "P;./output_files/$(PROJECT).sof"
+	$(QBIN)/quartus_pgm --no_banner --mode=jtag -o "P;./$(PROJECT).sof"
 
 .PHONY=vwfview
 vwfview:

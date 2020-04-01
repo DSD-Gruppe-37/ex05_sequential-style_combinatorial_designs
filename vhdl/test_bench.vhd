@@ -20,29 +20,29 @@ END;
 ARCHITECTURE structural OF test_bench IS
 BEGIN
 
-    -- TwoPlayerGuessGame : ENTITY two_player_guess_game
-    --     PORT MAP
-    --     (
-    --         inputs    => SW(7 DOWNTO 0),   -- inputs
-    --         playerSel => SW(17),           -- Player Select
-    --         set       => key(3),           -- set predef. vals.
-    --         show      => key(1),           -- show predef. vals.
-    --         try       => key(0),           -- eval. guess
-    --         hexPlayer => HEX4(6 DOWNTO 0), -- 7-seg ones
-    --         hexOnes      => HEX6(6 DOWNTO 0), -- 7-seg ones
-    --         hexTens     => HEX7(6 DOWNTO 0)  -- 7-seg tens
-    --     );
-
-    GuessGame : ENTITY guess_game
+    TwoPlayerGuessGame : ENTITY two_player_guess_game
         PORT MAP
         (
-        inputs => SW(7 DOWNTO 0),   -- inputs
-        set    => key(3),           -- set predef. vals.
-        show   => key(1),           -- show predef. vals.
-        try    => key(0),           -- eval. guess
-        hex1   => HEX6(6 DOWNTO 0), -- 7-seg ones
-        hex10  => HEX7(6 DOWNTO 0)  -- 7-seg tens
+            inputs    => SW(7 DOWNTO 0),   -- inputs
+            playerSel => SW(17),           -- Player Select
+            set       => key(3),           -- set predef. vals.
+            show      => key(1),           -- show predef. vals.
+            try       => key(0),           -- eval. guess
+            hexPlayer => HEX4(6 DOWNTO 0), -- 7-seg ones
+            hexOnes   => HEX6(6 DOWNTO 0), -- 7-seg ones
+            hexTens   => HEX7(6 DOWNTO 0)  -- 7-seg tens
         );
+
+    -- GuessGame : ENTITY guess_game
+    --     PORT MAP
+    --     (
+    --     inputs => SW(7 DOWNTO 0),   -- inputs
+    --     set    => key(3),           -- set predef. vals.
+    --     show   => key(1),           -- show predef. vals.
+    --     try    => key(0),           -- eval. guess
+    --     hex1   => HEX6(6 DOWNTO 0), -- 7-seg ones
+    --     hex10  => HEX7(6 DOWNTO 0)  -- 7-seg tens
+    --     );
 
     -- Hexdisplay : ENTITY bin2hex(Behavioral)
     --     PORT MAP

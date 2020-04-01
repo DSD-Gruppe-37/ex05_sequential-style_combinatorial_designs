@@ -1,6 +1,6 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
-
+USE work.ALL;
 ENTITY guesslatch IS
     PORT
     (

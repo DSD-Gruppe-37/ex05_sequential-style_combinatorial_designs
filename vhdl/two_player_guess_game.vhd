@@ -20,14 +20,14 @@ ARCHITECTURE TwoPlayerGame OF two_player_guess_game IS
     -- Player one signals
     SIGNAL p1Show   : std_logic;
     SIGNAL p1Set    : std_logic;
-    SIGNAL p1Try    : std_logic;
     SIGNAL p1Input  : std_logic_vector(7 DOWNTO 0);
+    SIGNAL p1Try    : std_logic;
     SIGNAL p1Output : std_logic_vector(13 DOWNTO 0);
     -- Player two signals
     SIGNAL p2Show   : std_logic;
     SIGNAL p2Set    : std_logic;
-    SIGNAL p2Try    : std_logic;
     SIGNAL p2Input  : std_logic_vector(7 DOWNTO 0);
+    SIGNAL p2Try    : std_logic;
     SIGNAL p2Output : std_logic_vector(13 DOWNTO 0);
 
 BEGIN
@@ -50,7 +50,7 @@ BEGIN
         PORT
         MAP
         (
-        inputs(7 DOWNTO 0) => (OTHERS => '0'),
+        inputs(7 DOWNTO 0), -- => (OTHERS => '0'),
         set   => p1Set,
         show  => p1Show,
         try   => p1Try,
@@ -58,11 +58,12 @@ BEGIN
         hex1  => p1Output(6 DOWNTO 0),
         hex10 => p1Output(13 DOWNTO 7)
         );
+
     playerTwoGame : ENTITY guess_game
         PORT
         MAP
         (
-        inputs(7 DOWNTO 0) => (OTHERS => '0'),
+        inputs(7 DOWNTO 0), -- => (OTHERS => '0'),
         set   => p2Set,
         show  => p2Show,
         try   => p2Try,
@@ -70,6 +71,7 @@ BEGIN
         hex1  => p2Output(6 DOWNTO 0),
         hex10 => p2Output(13 DOWNTO 7)
         );
+
     --------------------
     --- Multiplexers ---
     --------------------
@@ -84,14 +86,16 @@ BEGIN
         inC(7 DOWNTO 0) => inputs,
         inD(0)          => try,
         -- OUTPUTS
-        o(0)            => OPEN,
-        o1(0)           => OPEN,
-        o2(7 DOWNTO 0)  => OPEN,
-        o3(0)           => OPEN,
-        o4(0)           => OPEN,
-        o5(0)           => OPEN,
-        o6(7 DOWNTO 0)  => OPEN,
-        o7(0)           => OPEN
+        ---- P1
+        o(0)            => p1Show,
+        o1(0)           => p1Set,
+        o2(7 DOWNTO 0)  => p1Input,
+        o3(0)           => p1Try,
+        ---- P2
+        o4(0)           => p2Show,
+        o5(0)           => p2Set,
+        o6(7 DOWNTO 0)  => p2Input,
+        o7(0)           => p2Try
         );
     MultiplexShowPlayer : ENTITY mux(muxTwo)
         PORT
@@ -105,7 +109,14 @@ BEGIN
         inD => (OTHERS => '0'),
         -- OUTPUTS
         o(6 DOWNTO 0)    => hexOnes(6 DOWNTO 0),
-        o(13 DOWNTO 7)   => hexTens(6 DOWNTO 0)
+        o(13 DOWNTO 7)   => hexTens(6 DOWNTO 0),
+        o1(0)            => OPEN, -- Unused
+        o2(7 DOWNTO 0)   => OPEN, -- Unused
+        o3(0)            => OPEN, -- Unused
+        o4(0)            => OPEN, -- Unused
+        o5(0)            => OPEN, -- Unused
+        o6(7 DOWNTO 0)   => OPEN, -- Unused
+        o7(0)            => OPEN  -- Unused
         );
 
 END TwoPlayerGame; -- TwoPlayerGame
