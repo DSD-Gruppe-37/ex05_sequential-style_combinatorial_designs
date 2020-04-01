@@ -10,7 +10,10 @@ ENTITY test_bench IS
         KEY  : IN std_logic_vector(3 DOWNTO 0);
         HEX0 : OUT std_logic_vector(6 DOWNTO 0);
         HEX1 : OUT std_logic_vector(6 DOWNTO 0);
+        HEX2 : OUT std_logic_vector(6 DOWNTO 0);
+        HEX3 : OUT std_logic_vector(6 DOWNTO 0);
         HEX4 : OUT std_logic_vector(6 DOWNTO 0);
+        HEX5 : OUT std_logic_vector(6 DOWNTO 0);
         HEX6 : OUT std_logic_vector(6 DOWNTO 0);
         HEX7 : OUT std_logic_vector(6 DOWNTO 0);
         LEDR : OUT std_logic_vector(17 DOWNTO 0)
@@ -28,9 +31,9 @@ BEGIN
             set       => key(3),           -- set predef. vals.
             show      => key(1),           -- show predef. vals.
             try       => key(0),           -- eval. guess
-            hexPlayer => HEX4(6 DOWNTO 0), -- 7-seg ones
-            hexOnes   => HEX6(6 DOWNTO 0), -- 7-seg ones
-            hexTens   => HEX7(6 DOWNTO 0)  -- 7-seg tens
+            hexPlayer => HEX7(6 DOWNTO 0), -- 7-seg ones
+            hexOnes   => HEX0(6 DOWNTO 0), -- 7-seg ones
+            hexTens   => HEX1(6 DOWNTO 0)  -- 7-seg tens
         );
 
     -- GuessGame : ENTITY guess_game

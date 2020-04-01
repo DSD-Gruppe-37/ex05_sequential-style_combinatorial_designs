@@ -10,8 +10,8 @@ ENTITY mux IS
         inSelect : IN std_logic_vector(1 DOWNTO 0);   -- Selector
         inA      : IN std_logic_vector(13 DOWNTO 0);  -- input A vector
         inB      : IN std_logic_vector(13 DOWNTO 0);  -- input B vector
-        inC      : IN std_logic_vector(13 DOWNTO 0);  -- input B vector
-        inD      : IN std_logic_vector(13 DOWNTO 0);  -- input B vector
+        inC      : IN std_logic_vector(13 DOWNTO 0);  -- input C vector
+        inD      : IN std_logic_vector(13 DOWNTO 0);  -- input D vector
         o        : OUT std_logic_vector(13 DOWNTO 0); -- Output vector
         o1       : OUT std_logic_vector(13 DOWNTO 0); -- Output vector
         o2       : OUT std_logic_vector(13 DOWNTO 0); -- Output vector
@@ -62,20 +62,32 @@ END muxTwo;  -- muxTwo
 -------------------------------------------------------------------------------------------
 ARCHITECTURE mux4In OF mux IS
 BEGIN
+            muxProcesser : PROCESS (inSelect, inA, inB, inC, inD)
+            BEGIN
+                CASE(inSelect(0)) IS
+                WHEN '1' =>
+                    o(0)           <= inA(0);--
+                    o1(0)          <= inB(0);--
+                    o2(7 DOWNTO 0) <= inC(7 DOWNTO 0);--
+                    o3(0)          <= inD(0);--
+                WHEN '0' =>
+                    o4(0)          <= inA(0);
+                    o5(0)          <= inB(0);
+                    o6(7 DOWNTO 0) <= inC(7 DOWNTO 0);
+                    o7(0)          <= inD(0);
+                -- WHEN OTHERS => o(7 DOWNTO 0) <= inA(7 DOWNTO 0);--
+                END CASE;
 
-    muxProcesser : PROCESS (inSelect, inA, inB, inC, inD)
-    BEGIN
-
-        IF (inSelect(0) = '0') THEN
-            o(0)           <= inA(0);
-            o1(0)          <= inB(0);
-            o2(7 DOWNTO 0) <= inC(7 DOWNTO 0);
-            o3(0)          <= inD(0);
-        ELSIF (inSelect(0) = '1') THEN
-            o4(0)          <= inA(0);
-            o5(0)          <= inB(0);
-            o6(7 DOWNTO 0) <= inC(7 DOWNTO 0);
-            o7(0)          <= inD(0);
-        END IF;
-    END PROCESS;
-END mux4In; -- mux4In
+                -- IF (inSelect(0) = '0') THEN
+                --     o(0)           <= inA(0);
+                --     o1(0)          <= inB(0);
+                --     o2(7 DOWNTO 0) <= inC(7 DOWNTO 0);
+                --     o3(0)          <= inD(0);
+                -- ELSIF (inSelect(0) = '1') THEN
+                --     o4(0)          <= inA(0);
+                --     o5(0)          <= inB(0);
+                --     o6(7 DOWNTO 0) <= inC(7 DOWNTO 0);
+                --     o7(0)          <= inD(0);
+                -- END IF;
+            END PROCESS;
+    END mux4In; -- mux4In

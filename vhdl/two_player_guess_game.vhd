@@ -50,26 +50,26 @@ BEGIN
         PORT
         MAP
         (
-        inputs(7 DOWNTO 0), -- => (OTHERS => '0'),
-        set   => p1Set,
-        show  => p1Show,
-        try   => p1Try,
+        inputs(7 DOWNTO 0) => p1Input, -- => (OTHERS => '0'),
+        set                => p1Set,
+        show               => p1Show,
+        try                => p1Try,
         -- OUTPUTS
-        hex1  => p1Output(6 DOWNTO 0),
-        hex10 => p1Output(13 DOWNTO 7)
+        hex1               => p1Output(6 DOWNTO 0),
+        hex10              => p1Output(13 DOWNTO 7)
         );
 
     playerTwoGame : ENTITY guess_game
         PORT
         MAP
         (
-        inputs(7 DOWNTO 0), -- => (OTHERS => '0'),
-        set   => p2Set,
-        show  => p2Show,
-        try   => p2Try,
+        inputs(7 DOWNTO 0) => p2Input, -- => (OTHERS => '0'),
+        set                => p2Set,
+        show               => p2Show,
+        try                => p2Try,
         -- OUTPUTS
-        hex1  => p2Output(6 DOWNTO 0),
-        hex10 => p2Output(13 DOWNTO 7)
+        hex1               => p2Output(6 DOWNTO 0),
+        hex10              => p2Output(13 DOWNTO 7)
         );
 
     --------------------
@@ -103,20 +103,20 @@ BEGIN
         (
         -- INPUTS         
         inSelect(0)      => playerSel,
-        inA(13 DOWNTO 0) => p1Output,
-        inB(13 DOWNTO 0) => p2Output,
+        inA(13 DOWNTO 0) => p1Output(13 DOWNTO 0),
+        inB(13 DOWNTO 0) => p2Output(13 DOWNTO 0),
         inC => (OTHERS => '0'),
         inD => (OTHERS => '0'),
         -- OUTPUTS
         o(6 DOWNTO 0)    => hexOnes(6 DOWNTO 0),
         o(13 DOWNTO 7)   => hexTens(6 DOWNTO 0),
-        o1(0)            => OPEN, -- Unused
-        o2(7 DOWNTO 0)   => OPEN, -- Unused
-        o3(0)            => OPEN, -- Unused
-        o4(0)            => OPEN, -- Unused
-        o5(0)            => OPEN, -- Unused
-        o6(7 DOWNTO 0)   => OPEN, -- Unused
-        o7(0)            => OPEN  -- Unused
+        o1               => OPEN, -- Unused
+        o2               => OPEN, -- Unused
+        o3               => OPEN, -- Unused
+        o4               => OPEN, -- Unused
+        o5               => OPEN, -- Unused
+        o6               => OPEN, -- Unused
+        o7               => OPEN  -- Unused
         );
 
 END TwoPlayerGame; -- TwoPlayerGame
