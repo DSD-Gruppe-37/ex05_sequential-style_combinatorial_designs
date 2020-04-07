@@ -20,10 +20,6 @@ ARCHITECTURE guessgame OF guess_game IS
     SIGNAL bin2hexOut   : std_logic_vector(13 DOWNTO 0);
     SIGNAL muxFourSel   : std_logic_vector(1 DOWNTO 0);
 
-
-
-
-    
 BEGIN
     displayOnes : ENTITY bin2hex(Behavioral)
         PORT MAP

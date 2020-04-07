@@ -22,13 +22,13 @@ END;
 ARCHITECTURE structural OF test_bench IS
 BEGIN
 
-    --- Turn off HEX (Active low...)
-    HEX2 <= ("1111111");
-    HEX3 <= ("1111111");
-    HEX4 <= ("1111111");
-    HEX5 <= ("1111111");
-    HEX7 <= ("0001100");
-    ---
+    -- -- Turn off HEX (Active low...)
+    -- HEX2 <= ("1111111");
+    -- HEX3 <= ("1111111");
+    -- HEX4 <= ("1111111");
+    -- HEX5 <= ("1111111");
+    -- HEX7 <= ("0001100");
+    
 
     -- TwoPlayerGuessGame : ENTITY two_player_guess_game
     --     PORT MAP
@@ -54,22 +54,22 @@ BEGIN
     --     hex10  => HEX7(6 DOWNTO 0)  -- 7-seg tens
     --     );
 
-    -- Hexdisplay : ENTITY bin2hex(Behavioral)
-    --     PORT MAP
-    --     (
-    --         -- INPUTS
-    --         bin(3 DOWNTO 0)  => SW(3 DOWNTO 0),
-    --         -- OUTPUTS
-    --         Sseg(6 DOWNTO 0) => HEX0(6 DOWNTO 0)
-    --     );   
-    Count1s : ENTITY CountOnes(Counts)
+    Hexdisplay : ENTITY bin2hex(Behavioral)
         PORT MAP
         (
             -- INPUTS
-            in1(7 DOWNTO 0)  => SW(7 DOWNTO 0),
+            bin(3 DOWNTO 0)  => SW(3 DOWNTO 0),
             -- OUTPUTS
-            out1(6 DOWNTO 0) => HEX0(6 DOWNTO 0)
-        );
+            Sseg(6 DOWNTO 0) => HEX0(6 DOWNTO 0)
+        );   
+    -- Count1s : ENTITY CountOnes(Counts)
+    --     PORT MAP
+    --     (
+    --         INPUTS
+    --         in1(7 DOWNTO 0)  => SW(7 DOWNTO 0),
+    --         OUTPUTS
+    --         out1(6 DOWNTO 0) => HEX0(6 DOWNTO 0)
+    --     );
 
     -- LatchEnt : ENTITY guesslatch(latch)
     --     PORT MAP
@@ -114,13 +114,13 @@ BEGIN
     --         o        => Dummy(31 DOWNTO 11)
     --     );
 
-    UUT1 : ENTITY nand_8(genericType)
-        PORT MAP
-        (
-            -- INPUTS         
-            a(7 DOWNTO 0) => SW(7 DOWNTO 0),
-            -- OUTPUTS
-            y             => LEDR(0)
-        );
+    -- UUT1 : ENTITY nand_8(genericType)
+    --     PORT MAP
+    --     (
+    --         INPUTS         
+    --         a(7 DOWNTO 0) => SW(7 DOWNTO 0),
+    --         OUTPUTS
+    --         y             => LEDR(0)
+    --     );
 
 END;
