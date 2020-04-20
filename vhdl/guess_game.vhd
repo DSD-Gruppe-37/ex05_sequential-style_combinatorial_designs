@@ -38,53 +38,52 @@ BEGIN
             seg(6 DOWNTO 0) => bin2hexOut(13 DOWNTO 7)
         );
 
-    Latcher : ENTITY guesslatch
-        PORT
-        MAP
+    Latcher : ENTITY generic_latch
+        GENERIC MAP(
+            bits => 8
+        )
+        PORT MAP
         (
-        -- INPUTS         
-        en => set,
-        d  => inputs(7 DOWNTO 0),
-        -- OUTPUTS
-        q  => secret_value(7 DOWNTO 0)
+            -- INPUTS         
+            en => set,
+            d  => inputs(7 DOWNTO 0),
+            -- OUTPUTS
+            q => secret_value(7 DOWNTO 0)
         );
     Compare : ENTITY CompareLogic(compare)
-        PORT
-        MAP
+        PORT MAP
         (
-        -- INPUTS         
-        tryin => try,
-        a     => inputs(7 DOWNTO 0),
-        b     => secret_value(7 DOWNTO 0),
-        -- OUTPUTS
-        o     => muxFourSel(1 DOWNTO 0)
+            -- INPUTS         
+            tryin => try,
+            a     => inputs(7 DOWNTO 0),
+            b     => secret_value(7 DOWNTO 0),
+            -- OUTPUTS
+            o => muxFourSel(1 DOWNTO 0)
         );
     MultiplexFourOne : ENTITY mux(muxFour)
-        PORT
-        MAP
+        PORT MAP
         (
-        -- INPUTS         
-        inSelect       => muxFourSel(1 DOWNTO 0),
-        inA            => bin2hexOut(13 DOWNTO 0),
-        inB => (OTHERS => '0'),
-        inC => (OTHERS => '0'),
-        inD => (OTHERS => '0'),
-        -- OUTPUTS
-        o(6 DOWNTO 0)  => hex1(6 DOWNTO 0),
-        o(13 DOWNTO 7) => hex10(6 DOWNTO 0)
+            -- INPUTS         
+            inSelect => muxFourSel(1 DOWNTO 0),
+            inA      => bin2hexOut(13 DOWNTO 0),
+            inB => (OTHERS => '0'),
+            inC => (OTHERS => '0'),
+            inD => (OTHERS => '0'),
+            -- OUTPUTS
+            o(6 DOWNTO 0)  => hex1(6 DOWNTO 0),
+            o(13 DOWNTO 7) => hex10(6 DOWNTO 0)
         );
     MultiplexTwoOne : ENTITY mux(muxTwo)
-        PORT
-        MAP
+        PORT MAP
         (
-        -- INPUTS         
-        inSelect(0)     => show,
-        inA(7 DOWNTO 0) => inputs,
-        inB(7 DOWNTO 0) => secret_value,
-        inC => (OTHERS => '0'),
-        inD => (OTHERS => '0'),
-        -- OUTPUTS
-        o(7 DOWNTO 0)   => muxTwoOut
+            -- INPUTS         
+            inSelect(0)     => show,
+            inA(7 DOWNTO 0) => inputs,
+            inB(7 DOWNTO 0) => secret_value,
+            inC => (OTHERS => '0'),
+            inD => (OTHERS => '0'),
+            -- OUTPUTS
+            o(7 DOWNTO 0) => muxTwoOut
         );
 
 END guessgame; -- guessgame

@@ -1,27 +1,24 @@
-library IEEE;
-use IEEE.std_logic_1164.all;
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
 USE work.ALL;
-ENTITY guesslatch IS
-    PORT
-    (
-        d  : IN std_logic_vector(7 DOWNTO 0); -- Input 
-        en : IN std_logic;                    -- Enable switch
-        q  : OUT std_logic_vector(7 DOWNTO 0) -- Output
+
+ENTITY generic_latch IS
+    GENERIC (
+        bits : INTEGER := 8
     );
-END guesslatch;
+    PORT (
+        d  : IN std_logic_vector(bits - 1 DOWNTO 0); -- Input 
+        en : IN std_logic;                           -- Enable switch
+        q  : OUT std_logic_vector(bits - 1 DOWNTO 0) -- Output
+    );
+END generic_latch;
 
-ARCHITECTURE latch OF guesslatch IS
-
-    SIGNAL qsig : std_logic_vector(7 DOWNTO 0);
-
+ARCHITECTURE latch OF generic_latch IS
 BEGIN
-    guesslatchprocess : PROCESS (en, d, qsig)
+    PROCESS (en, d)
     BEGIN
         IF en = '0' THEN -- Hvis en = TRUE
-            qsig <= d;       -- q gets what d is
-        ELSE
-            qsig <= qsig; -- q stays whatever q was
+            q <= d;          -- q gets what d is
         END IF;
-        q <= qsig;
-    END PROCESS guesslatchprocess;
-END latch; -- latch
+    END PROCESS;
+END latch;

@@ -57,12 +57,15 @@ BEGIN
         PORT MAP
         (
             --INPUTS
-            A_in(7 DOWNTO 0)   => SW(7 DOWNTO 0),
+            A_in(7 DOWNTO 0) => SW(7 DOWNTO 0),
             --OUTPUTS
             hexout(6 DOWNTO 0) => HEX0(6 DOWNTO 0)
         );
 
-    --    LatchEnt : ENTITY guesslatch(latch)
+    --    LatchEnt : ENTITY generic_latch
+    --        GENERIC MAP(
+    --            bits => 8
+    --        )
     --        PORT MAP
     --        (
     --            -- INPUTS         

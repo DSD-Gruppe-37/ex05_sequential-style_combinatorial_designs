@@ -3,10 +3,9 @@ USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 USE work.ALL;
 ENTITY CompareLogic IS
-    PORT
-    (
+    PORT (
         a     : IN std_logic_vector(7 DOWNTO 0); -- input fra Switches --(Input a)
-        b     : IN std_logic_vector(7 DOWNTO 0); -- input fra guesslatch-- (input b)
+        b     : IN std_logic_vector(7 DOWNTO 0); -- input fra latch -- (input b)
         tryin : IN std_logic;                    -- input fra Try switch --( enable)
         o     : OUT std_logic_vector(1 DOWNTO 0) -- output til mux --(output)
     );

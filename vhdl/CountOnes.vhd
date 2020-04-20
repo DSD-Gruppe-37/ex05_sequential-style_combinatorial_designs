@@ -3,8 +3,7 @@ USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
 
 ENTITY CountOnes IS
-    PORT
-    (
+    PORT (
         A    : IN std_logic_vector(7 DOWNTO 0);
         ones : OUT std_logic_vector(3 DOWNTO 0)
     );
@@ -20,7 +19,7 @@ BEGIN
                 OneCounter := OneCounter + 1;
             END IF;
         END LOOP;
-        ones <= std_logic_vector(to_unsigned(OneCounter,4));
+        ones <= std_logic_vector(to_unsigned(OneCounter, 4));
     END PROCESS Counter;
 END ARCHITECTURE Count;
 
@@ -50,5 +49,5 @@ END ARCHITECTURE Count;
 --             -- INPUTS
 --             bin(3 DOWNTO 0)  => CountOutput(3 DOWNTO 0),
 --             -- OUTPUTS
---             Sseg(6 DOWNTO 0) => ones(6 DOWNTO 0)
+--             seg(6 DOWNTO 0) => ones(6 DOWNTO 0)
 --         );
