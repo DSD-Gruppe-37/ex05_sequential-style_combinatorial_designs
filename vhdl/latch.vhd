@@ -4,7 +4,7 @@ USE work.ALL;
 
 ENTITY generic_latch IS
     GENERIC (
-        bits : INTEGER := 8
+        bits : POSITIVE := 8
     );
     PORT (
         d  : IN std_logic_vector(bits - 1 DOWNTO 0); -- Input 
