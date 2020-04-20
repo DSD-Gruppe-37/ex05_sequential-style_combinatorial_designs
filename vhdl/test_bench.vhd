@@ -79,11 +79,11 @@ BEGIN
     --        PORT MAP
     --        (
     --            -- INPUTS         
-    --            tryin => key(0),
+    --            en => key(0),
     --            a     => SW(11 DOWNTO 4),
     --            b     => SW(7 DOWNTO 0),
     --            -- OUTPUTS
-    --            o     => LEDR(9 DOWNTO 8) -- Dummy 9;8
+    --            comp     => LEDR(9 DOWNTO 8) -- Dummy 9;8
     --        );
 
     --    MuxFourEnt : ENTITY muxFour

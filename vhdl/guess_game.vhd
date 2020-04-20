@@ -54,11 +54,11 @@ BEGIN
         PORT MAP
         (
             -- INPUTS         
-            tryin => try,
-            a     => inputs(7 DOWNTO 0),
-            b     => secret_value(7 DOWNTO 0),
+            en => try,
+            a  => inputs(7 DOWNTO 0),
+            b  => secret_value(7 DOWNTO 0),
             -- OUTPUTS
-            o => muxFourSel(1 DOWNTO 0)
+            comp => muxFourSel(1 DOWNTO 0)
         );
     MultiplexFourOne : ENTITY mux(muxFour)
         PORT MAP
