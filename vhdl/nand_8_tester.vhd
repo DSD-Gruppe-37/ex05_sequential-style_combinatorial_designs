@@ -5,8 +5,8 @@ USE work.ALL;
 
 ENTITY nand_8_tester IS
     PORT (
-        SW    : IN std_logic_vector(7 DOWNTO 0);
-        LEDR0 : OUT std_logic
+        SW   : IN std_logic_vector(7 DOWNTO 0);
+        LEDR : OUT std_logic_vector(0 DOWNTO 0)
     );
 END ENTITY nand_8_tester;
 
@@ -16,7 +16,7 @@ BEGIN
     UUT : ENTITY nand_8
         PORT MAP(
             a => SW,
-            y => LEDR0
+            y => LEDR(0)
         );
 
 END ARCHITECTURE testbench;
