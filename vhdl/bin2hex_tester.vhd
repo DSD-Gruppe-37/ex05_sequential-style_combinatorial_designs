@@ -3,7 +3,7 @@ USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
 USE work.ALL;
 
-ENTITY test_bench IS
+ENTITY bin2hex_tester IS
   PORT (
     SW   : IN std_logic_vector(3 DOWNTO 0);
     HEX0 : OUT std_logic_vector(6 DOWNTO 0)
