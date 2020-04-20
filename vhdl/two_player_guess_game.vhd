@@ -1,5 +1,6 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
 USE work.ALL;
 ENTITY two_player_guess_game IS
     PORT
@@ -31,9 +32,7 @@ ARCHITECTURE TwoPlayerGame OF two_player_guess_game IS
     SIGNAL p2Output : std_logic_vector(13 DOWNTO 0);
 
 BEGIN
-    ----------------------
-    --- Player Display ---
-    ----------------------
+
     displayPlayer : ENTITY bin2hex(Behavioral)
         PORT MAP
         (
@@ -42,10 +41,6 @@ BEGIN
             -- OUTPUTS
             Sseg   => hexPlayer
         );
-
-    --------------------
-    --- Player games ---
-    --------------------
     playerOneGame : ENTITY guess_game
         PORT
         MAP
@@ -71,10 +66,6 @@ BEGIN
         hex1               => p2Output(6 DOWNTO 0),
         hex10              => p2Output(13 DOWNTO 7)
         );
-
-    --------------------
-    --- Multiplexers ---
-    --------------------
     MultiplexPlayerSelect : ENTITY mux(mux4In)
         PORT
         MAP
@@ -97,6 +88,7 @@ BEGIN
         o6(7 DOWNTO 0)  => p2Input,
         o7(0)           => p2Try
         );
+
     MultiplexShowPlayer : ENTITY mux(muxTwo)
         PORT
         MAP
@@ -118,5 +110,4 @@ BEGIN
         o6               => OPEN, -- Unused
         o7               => OPEN  -- Unused
         );
-
 END TwoPlayerGame; -- TwoPlayerGame

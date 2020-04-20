@@ -7,19 +7,9 @@ USE ieee.std_logic_1164.ALL;
 ENTITY mux IS
     PORT
     (
-        inSelect : IN std_logic_vector(1 DOWNTO 0);   -- Selector
-        inA      : IN std_logic_vector(13 DOWNTO 0);  -- input A vector
-        inB      : IN std_logic_vector(13 DOWNTO 0);  -- input B vector
-        inC      : IN std_logic_vector(13 DOWNTO 0);  -- input C vector
-        inD      : IN std_logic_vector(13 DOWNTO 0);  -- input D vector
-        o        : OUT std_logic_vector(13 DOWNTO 0); -- Output vector
-        o1       : OUT std_logic_vector(13 DOWNTO 0); -- Output vector
-        o2       : OUT std_logic_vector(13 DOWNTO 0); -- Output vector
-        o3       : OUT std_logic_vector(13 DOWNTO 0); -- Output vector
-        o4       : OUT std_logic_vector(13 DOWNTO 0); -- Output vector
-        o5       : OUT std_logic_vector(13 DOWNTO 0); -- Output vector
-        o6       : OUT std_logic_vector(13 DOWNTO 0); -- Output vector
-        o7       : OUT std_logic_vector(13 DOWNTO 0)  -- Output vector
+        inSelect                      : IN std_logic_vector(1 DOWNTO 0);   -- Selector
+        inA, inB, inC, inD            : IN std_logic_vector(13 DOWNTO 0);  -- input vectors
+        o, o1, o2, o3, o4, o5, o6, o7 : OUT std_logic_vector(13 DOWNTO 0) -- Output vectors
     );
 END mux;
 
@@ -32,9 +22,9 @@ BEGIN
     muxProcess : PROCESS (inSelect, inA)
     BEGIN
         CASE(inSelect) IS
-            WHEN "00"   => o   <= "10001110100011";-- "Lo" = 
-            WHEN "01"   => o   <= "01111110111111";-- -- =  
-            WHEN "11"   => o   <= "00010011101111";-- "Hi" = 
+            WHEN "00"   => o   <= "10001110100011";-- "Lo"  
+            WHEN "01"   => o   <= "01111110111111";--   
+            WHEN "11"   => o   <= "00010011101111";-- "Hi"  
             WHEN "10"   => o   <= inA; -- Numbers from input
             WHEN OTHERS => o <= inA;
         END CASE;
@@ -50,9 +40,9 @@ BEGIN
     muxProcess : PROCESS (inSelect(0), inA, inB)
     BEGIN
         CASE(inSelect(0)) IS
-            WHEN '1'    => o(13 DOWNTO 0)    <= inA(13 DOWNTO 0);-- 
-            WHEN '0'    => o(13 DOWNTO 0)    <= inB(13 DOWNTO 0); --  
-            WHEN OTHERS => o(13 DOWNTO 0) <= inA(13 DOWNTO 0);--
+            WHEN '1'    => o(13 DOWNTO 0)    <= inA(13 DOWNTO 0);  
+            WHEN '0'    => o(13 DOWNTO 0)    <= inB(13 DOWNTO 0);   
+            WHEN OTHERS => o(13 DOWNTO 0) <= inA(13 DOWNTO 0);    
         END CASE;
     END PROCESS; -- muxProcess
 END muxTwo;  -- muxTwo
@@ -75,7 +65,6 @@ BEGIN
             o5(0)          <= inB(0);
             o6(7 DOWNTO 0) <= inC(7 DOWNTO 0);
             o7(0)          <= inD(0);
-            -- WHEN OTHERS => o(7 DOWNTO 0) <= inA(7 DOWNTO 0);--
         END CASE;
     END PROCESS;
 END mux4In; -- mux4In

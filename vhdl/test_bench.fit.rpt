@@ -1,5 +1,5 @@
 Fitter report for test_bench
-Sun Apr 19 15:04:01 2020
+Mon Apr 20 22:32:09 2020
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -25,16 +25,17 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  17. Fitter Resource Utilization by Entity
  18. Delay Chain Summary
  19. Pad To Core Delay Chain Fanout
- 20. Non-Global High Fan-Out Signals
- 21. Other Routing Usage Summary
- 22. LAB Logic Elements
- 23. LAB Signals Sourced
- 24. LAB Signals Sourced Out
- 25. LAB Distinct Inputs
- 26. Fitter Device Options
- 27. Operating Settings and Conditions
- 28. Fitter Messages
- 29. Fitter Suppressed Messages
+ 20. Control Signals
+ 21. Global & Other Fast Signals
+ 22. Non-Global High Fan-Out Signals
+ 23. Other Routing Usage Summary
+ 24. LAB Logic Elements
+ 25. LAB Signals Sourced
+ 26. LAB Signals Sourced Out
+ 27. LAB Distinct Inputs
+ 28. Fitter Device Options
+ 29. Operating Settings and Conditions
+ 30. Fitter Messages
 
 
 
@@ -60,15 +61,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Sun Apr 19 15:04:01 2020           ;
+; Fitter Status                      ; Successful - Mon Apr 20 22:32:09 2020           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; test_bench                                      ;
 ; Top-level Entity Name              ; test_bench                                      ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 21 / 33,216 ( < 1 % )                           ;
-;     Total combinational functions  ; 21 / 33,216 ( < 1 % )                           ;
+; Total logic elements               ; 178 / 33,216 ( < 1 % )                          ;
+;     Total combinational functions  ; 178 / 33,216 ( < 1 % )                          ;
 ;     Dedicated logic registers      ; 0 / 33,216 ( 0 % )                              ;
 ; Total registers                    ; 0                                               ;
 ; Total pins                         ; 96 / 475 ( 20 % )                               ;
@@ -483,8 +484,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 121 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 121 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 280 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 280 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -507,7 +508,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 118     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 277     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -515,125 +516,126 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/test_bench.pin.
+The pin-out file can be found in C:/DSD/dsd_journal_03/ex05/vhdl/test_bench.pin.
 
 
-+---------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                       ;
-+---------------------------------------------+-----------------------+
-; Resource                                    ; Usage                 ;
-+---------------------------------------------+-----------------------+
-; Total logic elements                        ; 21 / 33,216 ( < 1 % ) ;
-;     -- Combinational with no register       ; 21                    ;
-;     -- Register only                        ; 0                     ;
-;     -- Combinational with a register        ; 0                     ;
-;                                             ;                       ;
-; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 17                    ;
-;     -- 3 input functions                    ; 2                     ;
-;     -- <=2 input functions                  ; 2                     ;
-;     -- Register only                        ; 0                     ;
-;                                             ;                       ;
-; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 21                    ;
-;     -- arithmetic mode                      ; 0                     ;
-;                                             ;                       ;
-; Total registers*                            ; 0 / 34,593 ( 0 % )    ;
-;     -- Dedicated logic registers            ; 0 / 33,216 ( 0 % )    ;
-;     -- I/O registers                        ; 0 / 1,377 ( 0 % )     ;
-;                                             ;                       ;
-; Total LABs:  partially or completely used   ; 2 / 2,076 ( < 1 % )   ;
-; Virtual pins                                ; 0                     ;
-; I/O pins                                    ; 96 / 475 ( 20 % )     ;
-;     -- Clock pins                           ; 8 / 8 ( 100 % )       ;
-;                                             ;                       ;
-; Global signals                              ; 0                     ;
-; M4Ks                                        ; 0 / 105 ( 0 % )       ;
-; Total block memory bits                     ; 0 / 483,840 ( 0 % )   ;
-; Total block memory implementation bits      ; 0 / 483,840 ( 0 % )   ;
-; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )        ;
-; PLLs                                        ; 0 / 4 ( 0 % )         ;
-; Global clocks                               ; 0 / 16 ( 0 % )        ;
-; JTAGs                                       ; 0 / 1 ( 0 % )         ;
-; ASMI blocks                                 ; 0 / 1 ( 0 % )         ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )         ;
-; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%          ;
-; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%          ;
-; Maximum fan-out                             ; 7                     ;
-; Highest non-global fan-out                  ; 7                     ;
-; Total fan-out                               ; 85                    ;
-; Average fan-out                             ; 0.71                  ;
-+---------------------------------------------+-----------------------+
++----------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                        ;
++---------------------------------------------+------------------------+
+; Resource                                    ; Usage                  ;
++---------------------------------------------+------------------------+
+; Total logic elements                        ; 178 / 33,216 ( < 1 % ) ;
+;     -- Combinational with no register       ; 178                    ;
+;     -- Register only                        ; 0                      ;
+;     -- Combinational with a register        ; 0                      ;
+;                                             ;                        ;
+; Logic element usage by number of LUT inputs ;                        ;
+;     -- 4 input functions                    ; 80                     ;
+;     -- 3 input functions                    ; 87                     ;
+;     -- <=2 input functions                  ; 11                     ;
+;     -- Register only                        ; 0                      ;
+;                                             ;                        ;
+; Logic elements by mode                      ;                        ;
+;     -- normal mode                          ; 150                    ;
+;     -- arithmetic mode                      ; 28                     ;
+;                                             ;                        ;
+; Total registers*                            ; 0 / 34,593 ( 0 % )     ;
+;     -- Dedicated logic registers            ; 0 / 33,216 ( 0 % )     ;
+;     -- I/O registers                        ; 0 / 1,377 ( 0 % )      ;
+;                                             ;                        ;
+; Total LABs:  partially or completely used   ; 14 / 2,076 ( < 1 % )   ;
+; Virtual pins                                ; 0                      ;
+; I/O pins                                    ; 96 / 475 ( 20 % )      ;
+;     -- Clock pins                           ; 8 / 8 ( 100 % )        ;
+;                                             ;                        ;
+; Global signals                              ; 2                      ;
+; M4Ks                                        ; 0 / 105 ( 0 % )        ;
+; Total block memory bits                     ; 0 / 483,840 ( 0 % )    ;
+; Total block memory implementation bits      ; 0 / 483,840 ( 0 % )    ;
+; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )         ;
+; PLLs                                        ; 0 / 4 ( 0 % )          ;
+; Global clocks                               ; 2 / 16 ( 13 % )        ;
+; JTAGs                                       ; 0 / 1 ( 0 % )          ;
+; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
+; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%           ;
+; Peak interconnect usage (total/H/V)         ; 2% / 2% / 1%           ;
+; Maximum fan-out                             ; 55                     ;
+; Highest non-global fan-out                  ; 55                     ;
+; Total fan-out                               ; 623                    ;
+; Average fan-out                             ; 2.23                   ;
++---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Fitter Partition Statistics                                                                         ;
-+---------------------------------------------+----------------------+--------------------------------+
-; Statistic                                   ; Top                  ; hard_block:auto_generated_inst ;
-+---------------------------------------------+----------------------+--------------------------------+
-; Difficulty Clustering Region                ; Low                  ; Low                            ;
-;                                             ;                      ;                                ;
-; Total logic elements                        ; 21 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
-;     -- Combinational with no register       ; 21                   ; 0                              ;
-;     -- Register only                        ; 0                    ; 0                              ;
-;     -- Combinational with a register        ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Logic element usage by number of LUT inputs ;                      ;                                ;
-;     -- 4 input functions                    ; 17                   ; 0                              ;
-;     -- 3 input functions                    ; 2                    ; 0                              ;
-;     -- <=2 input functions                  ; 2                    ; 0                              ;
-;     -- Register only                        ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 21                   ; 0                              ;
-;     -- arithmetic mode                      ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Total registers                             ; 0                    ; 0                              ;
-;     -- Dedicated logic registers            ; 0 / 33216 ( 0 % )    ; 0 / 33216 ( 0 % )              ;
-;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 2 / 2076 ( < 1 % )   ; 0 / 2076 ( 0 % )               ;
-;                                             ;                      ;                                ;
-; Virtual pins                                ; 0                    ; 0                              ;
-; I/O pins                                    ; 96                   ; 0                              ;
-; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )       ; 0 / 70 ( 0 % )                 ;
-; Total memory bits                           ; 0                    ; 0                              ;
-; Total RAM block bits                        ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Connections                                 ;                      ;                                ;
-;     -- Input Connections                    ; 0                    ; 0                              ;
-;     -- Registered Input Connections         ; 0                    ; 0                              ;
-;     -- Output Connections                   ; 0                    ; 0                              ;
-;     -- Registered Output Connections        ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 85                   ; 0                              ;
-;     -- Registered Connections               ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; External Connections                        ;                      ;                                ;
-;     -- Top                                  ; 0                    ; 0                              ;
-;     -- hard_block:auto_generated_inst       ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Partition Interface                         ;                      ;                                ;
-;     -- Input Ports                          ; 22                   ; 0                              ;
-;     -- Output Ports                         ; 74                   ; 0                              ;
-;     -- Bidir Ports                          ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Registered Ports                            ;                      ;                                ;
-;     -- Registered Input Ports               ; 0                    ; 0                              ;
-;     -- Registered Output Ports              ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Port Connectivity                           ;                      ;                                ;
-;     -- Input Ports driven by GND            ; 0                    ; 0                              ;
-;     -- Output Ports driven by GND           ; 0                    ; 0                              ;
-;     -- Input Ports driven by VCC            ; 0                    ; 0                              ;
-;     -- Output Ports driven by VCC           ; 0                    ; 0                              ;
-;     -- Input Ports with no Source           ; 0                    ; 0                              ;
-;     -- Output Ports with no Source          ; 0                    ; 0                              ;
-;     -- Input Ports with no Fanout           ; 0                    ; 0                              ;
-;     -- Output Ports with no Fanout          ; 0                    ; 0                              ;
-+---------------------------------------------+----------------------+--------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Fitter Partition Statistics                                                                          ;
++---------------------------------------------+-----------------------+--------------------------------+
+; Statistic                                   ; Top                   ; hard_block:auto_generated_inst ;
++---------------------------------------------+-----------------------+--------------------------------+
+; Difficulty Clustering Region                ; Low                   ; Low                            ;
+;                                             ;                       ;                                ;
+; Total logic elements                        ; 178 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
+;     -- Combinational with no register       ; 178                   ; 0                              ;
+;     -- Register only                        ; 0                     ; 0                              ;
+;     -- Combinational with a register        ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Logic element usage by number of LUT inputs ;                       ;                                ;
+;     -- 4 input functions                    ; 80                    ; 0                              ;
+;     -- 3 input functions                    ; 87                    ; 0                              ;
+;     -- <=2 input functions                  ; 11                    ; 0                              ;
+;     -- Register only                        ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Logic elements by mode                      ;                       ;                                ;
+;     -- normal mode                          ; 150                   ; 0                              ;
+;     -- arithmetic mode                      ; 28                    ; 0                              ;
+;                                             ;                       ;                                ;
+; Total registers                             ; 0                     ; 0                              ;
+;     -- Dedicated logic registers            ; 0 / 33216 ( 0 % )     ; 0 / 33216 ( 0 % )              ;
+;                                             ;                       ;                                ;
+; Total LABs:  partially or completely used   ; 14 / 2076 ( < 1 % )   ; 0 / 2076 ( 0 % )               ;
+;                                             ;                       ;                                ;
+; Virtual pins                                ; 0                     ; 0                              ;
+; I/O pins                                    ; 96                    ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )        ; 0 / 70 ( 0 % )                 ;
+; Total memory bits                           ; 0                     ; 0                              ;
+; Total RAM block bits                        ; 0                     ; 0                              ;
+; Clock control block                         ; 2 / 20 ( 10 % )       ; 0 / 20 ( 0 % )                 ;
+;                                             ;                       ;                                ;
+; Connections                                 ;                       ;                                ;
+;     -- Input Connections                    ; 0                     ; 0                              ;
+;     -- Registered Input Connections         ; 0                     ; 0                              ;
+;     -- Output Connections                   ; 0                     ; 0                              ;
+;     -- Registered Output Connections        ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Internal Connections                        ;                       ;                                ;
+;     -- Total Connections                    ; 623                   ; 0                              ;
+;     -- Registered Connections               ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; External Connections                        ;                       ;                                ;
+;     -- Top                                  ; 0                     ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Partition Interface                         ;                       ;                                ;
+;     -- Input Ports                          ; 22                    ; 0                              ;
+;     -- Output Ports                         ; 74                    ; 0                              ;
+;     -- Bidir Ports                          ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Registered Ports                            ;                       ;                                ;
+;     -- Registered Input Ports               ; 0                     ; 0                              ;
+;     -- Registered Output Ports              ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Port Connectivity                           ;                       ;                                ;
+;     -- Input Ports driven by GND            ; 0                     ; 0                              ;
+;     -- Output Ports driven by GND           ; 0                     ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0                     ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0                     ; 0                              ;
+;     -- Input Ports with no Source           ; 0                     ; 0                              ;
+;     -- Output Ports with no Source          ; 0                     ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0                     ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0                     ; 0                              ;
++---------------------------------------------+-----------------------+--------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -641,11 +643,11 @@ The pin-out file can be found in C:/DSD/ex05_sequential-style_combinatorial_desi
 +--------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; Name   ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +--------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; KEY[0] ; G26   ; 5        ; 65           ; 27           ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; KEY[1] ; N23   ; 5        ; 65           ; 20           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; KEY[0] ; G26   ; 5        ; 65           ; 27           ; 1           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; KEY[1] ; N23   ; 5        ; 65           ; 20           ; 2           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; KEY[2] ; P23   ; 6        ; 65           ; 18           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; KEY[3] ; W26   ; 6        ; 65           ; 10           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; SW[0]  ; N25   ; 5        ; 65           ; 19           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; KEY[3] ; W26   ; 6        ; 65           ; 10           ; 2           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; SW[0]  ; N25   ; 5        ; 65           ; 19           ; 0           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[10] ; N1    ; 2        ; 0            ; 18           ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[11] ; P1    ; 1        ; 0            ; 18           ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[12] ; P2    ; 1        ; 0            ; 18           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
@@ -653,14 +655,14 @@ The pin-out file can be found in C:/DSD/ex05_sequential-style_combinatorial_desi
 ; SW[14] ; U3    ; 1        ; 0            ; 12           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[15] ; U4    ; 1        ; 0            ; 12           ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[16] ; V1    ; 1        ; 0            ; 12           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; SW[17] ; V2    ; 1        ; 0            ; 12           ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; SW[1]  ; N26   ; 5        ; 65           ; 19           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; SW[2]  ; P25   ; 6        ; 65           ; 19           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; SW[3]  ; AE14  ; 7        ; 33           ; 0            ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; SW[4]  ; AF14  ; 7        ; 33           ; 0            ; 1           ; 5                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; SW[5]  ; AD13  ; 8        ; 33           ; 0            ; 2           ; 5                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; SW[6]  ; AC13  ; 8        ; 33           ; 0            ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; SW[7]  ; C13   ; 3        ; 31           ; 36           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; SW[17] ; V2    ; 1        ; 0            ; 12           ; 3           ; 55                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; SW[1]  ; N26   ; 5        ; 65           ; 19           ; 1           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; SW[2]  ; P25   ; 6        ; 65           ; 19           ; 2           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; SW[3]  ; AE14  ; 7        ; 33           ; 0            ; 0           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; SW[4]  ; AF14  ; 7        ; 33           ; 0            ; 1           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; SW[5]  ; AD13  ; 8        ; 33           ; 0            ; 2           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; SW[6]  ; AC13  ; 8        ; 33           ; 0            ; 3           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; SW[7]  ; C13   ; 3        ; 31           ; 36           ; 2           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[8]  ; B13   ; 4        ; 31           ; 36           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[9]  ; A13   ; 4        ; 31           ; 36           ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 +--------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
@@ -1482,16 +1484,28 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                ;
-+------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------+--------------+
-; Compilation Hierarchy Node   ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                    ; Library Name ;
-+------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------+--------------+
-; |test_bench                  ; 21 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 96   ; 0            ; 21 (0)       ; 0 (0)             ; 0 (0)            ; |test_bench                                            ; work         ;
-;    |countOnesTester:Count1s| ; 21 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 21 (0)       ; 0 (0)             ; 0 (0)            ; |test_bench|countOnesTester:Count1s                    ; work         ;
-;       |CountOnes:CountOne|   ; 14 (14)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 14 (14)      ; 0 (0)             ; 0 (0)            ; |test_bench|countOnesTester:Count1s|CountOnes:CountOne ; work         ;
-;       |bin2hex:Hexdisplay|   ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |test_bench|countOnesTester:Count1s|bin2hex:Hexdisplay ; work         ;
-+------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                             ;
++-----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                    ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                ; Library Name ;
++-----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------+--------------+
+; |test_bench                                   ; 178 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 96   ; 0            ; 178 (0)      ; 0 (0)             ; 0 (0)            ; |test_bench                                                                                        ; work         ;
+;    |two_player_guess_game:TwoPlayerGuessGame| ; 178 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 178 (0)      ; 0 (0)             ; 0 (0)            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame                                               ; work         ;
+;       |guess_game:playerOneGame|              ; 47 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 47 (0)       ; 0 (0)             ; 0 (0)            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame                      ; work         ;
+;          |CompareLogic:Compare|               ; 21 (21)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 0 (0)            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare ; work         ;
+;          |bin2hex:displayOnes|                ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|bin2hex:displayOnes  ; work         ;
+;          |bin2hex:displayTens|                ; 6 (6)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|bin2hex:displayTens  ; work         ;
+;          |guesslatch:Latcher|                 ; 8 (8)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher   ; work         ;
+;          |mux:MultiplexTwoOne|                ; 8 (8)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|mux:MultiplexTwoOne  ; work         ;
+;       |guess_game:playerTwoGame|              ; 44 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 44 (0)       ; 0 (0)             ; 0 (0)            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame                      ; work         ;
+;          |CompareLogic:Compare|               ; 21 (21)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 0 (0)            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare ; work         ;
+;          |bin2hex:displayOnes|                ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|bin2hex:displayOnes  ; work         ;
+;          |bin2hex:displayTens|                ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|bin2hex:displayTens  ; work         ;
+;          |guesslatch:Latcher|                 ; 8 (8)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher   ; work         ;
+;          |mux:MultiplexTwoOne|                ; 8 (8)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|mux:MultiplexTwoOne  ; work         ;
+;       |mux:MultiplexPlayerSelect|             ; 22 (22)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 22 (22)      ; 0 (0)             ; 0 (0)            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect                     ; work         ;
+;       |mux:MultiplexShowPlayer|               ; 65 (65)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 65 (65)      ; 0 (0)             ; 0 (0)            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer                       ; work         ;
++-----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1509,11 +1523,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[14]   ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; SW[15]   ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; SW[16]   ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; SW[17]   ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; KEY[0]   ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; KEY[1]   ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; KEY[2]   ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; KEY[3]   ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; HEX0[0]  ; Output   ; --            ; --            ; --                    ; --  ;
 ; HEX0[1]  ; Output   ; --            ; --            ; --                    ; --  ;
 ; HEX0[2]  ; Output   ; --            ; --            ; --                    ; --  ;
@@ -1588,178 +1598,451 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDR[15] ; Output   ; --            ; --            ; --                    ; --  ;
 ; LEDR[16] ; Output   ; --            ; --            ; --                    ; --  ;
 ; LEDR[17] ; Output   ; --            ; --            ; --                    ; --  ;
+; SW[17]   ; Input    ; (0) 171 ps    ; (6) 2523 ps   ; --                    ; --  ;
 ; SW[7]    ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
 ; SW[6]    ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
 ; SW[5]    ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
 ; SW[4]    ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
 ; SW[3]    ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
 ; SW[2]    ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; SW[0]    ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; SW[1]    ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; SW[0]    ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; KEY[0]   ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
+; KEY[1]   ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
+; KEY[3]   ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
 +----------+----------+---------------+---------------+-----------------------+-----+
 
 
-+---------------------------------------------------+
-; Pad To Core Delay Chain Fanout                    ;
-+---------------------+-------------------+---------+
-; Source Pin / Fanout ; Pad To Core Index ; Setting ;
-+---------------------+-------------------+---------+
-; SW[8]               ;                   ;         ;
-; SW[9]               ;                   ;         ;
-; SW[10]              ;                   ;         ;
-; SW[11]              ;                   ;         ;
-; SW[12]              ;                   ;         ;
-; SW[13]              ;                   ;         ;
-; SW[14]              ;                   ;         ;
-; SW[15]              ;                   ;         ;
-; SW[16]              ;                   ;         ;
-; SW[17]              ;                   ;         ;
-; KEY[0]              ;                   ;         ;
-; KEY[1]              ;                   ;         ;
-; KEY[2]              ;                   ;         ;
-; KEY[3]              ;                   ;         ;
-; SW[7]               ;                   ;         ;
-; SW[6]               ;                   ;         ;
-; SW[5]               ;                   ;         ;
-; SW[4]               ;                   ;         ;
-; SW[3]               ;                   ;         ;
-; SW[2]               ;                   ;         ;
-; SW[0]               ;                   ;         ;
-; SW[1]               ;                   ;         ;
-+---------------------+-------------------+---------+
++----------------------------------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                                                 ;
++----------------------------------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                                              ; Pad To Core Index ; Setting ;
++----------------------------------------------------------------------------------+-------------------+---------+
+; SW[8]                                                                            ;                   ;         ;
+; SW[9]                                                                            ;                   ;         ;
+; SW[10]                                                                           ;                   ;         ;
+; SW[11]                                                                           ;                   ;         ;
+; SW[12]                                                                           ;                   ;         ;
+; SW[13]                                                                           ;                   ;         ;
+; SW[14]                                                                           ;                   ;         ;
+; SW[15]                                                                           ;                   ;         ;
+; SW[16]                                                                           ;                   ;         ;
+; KEY[2]                                                                           ;                   ;         ;
+; SW[17]                                                                           ;                   ;         ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[0]~18  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[0]~19  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[1]~22  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[1]~23  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~24  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~25  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~27  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~28  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~29  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[11]~38 ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[5]~42  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[5]~43  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[6]~44  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[6]~48  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[7]~52  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[7]~53  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[8]~54  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[8]~55  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[9]~57  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[9]~58  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[13]~67 ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[13]~68 ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~72  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~73  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[3]~74  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[8]~75  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[8]~76  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[10]~77 ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[13]~78 ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[7]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[6]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[5]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[4]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[3]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[2]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[1]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[0]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o3[0]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[7]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[6]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[5]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[4]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[3]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[2]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[1]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[0]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o7[0]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o4[0]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o[0]   ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o1[0]  ; 0                 ; 0       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o5[0]  ; 0                 ; 0       ;
+;      - HEX6[0]                                                                   ; 1                 ; 6       ;
+;      - HEX6[3]                                                                   ; 1                 ; 6       ;
+;      - HEX6[4]                                                                   ; 1                 ; 6       ;
+;      - HEX6[5]                                                                   ; 1                 ; 6       ;
+; SW[7]                                                                            ;                   ;         ;
+; SW[6]                                                                            ;                   ;         ;
+; SW[5]                                                                            ;                   ;         ;
+; SW[4]                                                                            ;                   ;         ;
+; SW[3]                                                                            ;                   ;         ;
+; SW[2]                                                                            ;                   ;         ;
+; SW[1]                                                                            ;                   ;         ;
+; SW[0]                                                                            ;                   ;         ;
+; KEY[0]                                                                           ;                   ;         ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o3[0]  ; 1                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o7[0]  ; 1                 ; 6       ;
+; KEY[1]                                                                           ;                   ;         ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o4[0]  ; 0                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o[0]   ; 0                 ; 6       ;
+; KEY[3]                                                                           ;                   ;         ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o1[0]  ; 0                 ; 6       ;
+;      - two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o5[0]  ; 0                 ; 6       ;
++----------------------------------------------------------------------------------+-------------------+---------+
 
 
-+-------------------------------------------------------------------+
-; Non-Global High Fan-Out Signals                                   ;
-+---------------------------------------------------------+---------+
-; Name                                                    ; Fan-Out ;
-+---------------------------------------------------------+---------+
-; countOnesTester:Count1s|CountOnes:CountOne|ones[3]~5    ; 7       ;
-; countOnesTester:Count1s|CountOnes:CountOne|ones[2]~4    ; 7       ;
-; countOnesTester:Count1s|CountOnes:CountOne|ones[1]~1    ; 7       ;
-; countOnesTester:Count1s|CountOnes:CountOne|ones[0]~0    ; 7       ;
-; SW[4]                                                   ; 5       ;
-; SW[5]                                                   ; 5       ;
-; countOnesTester:Count1s|CountOnes:CountOne|OneCounter~0 ; 5       ;
-; SW[1]                                                   ; 3       ;
-; SW[0]                                                   ; 3       ;
-; SW[2]                                                   ; 3       ;
-; SW[3]                                                   ; 3       ;
-; SW[6]                                                   ; 3       ;
-; SW[7]                                                   ; 3       ;
-; countOnesTester:Count1s|CountOnes:CountOne|OneCounter~4 ; 3       ;
-; countOnesTester:Count1s|CountOnes:CountOne|OneCounter~3 ; 3       ;
-; countOnesTester:Count1s|CountOnes:CountOne|OneCounter~7 ; 2       ;
-; countOnesTester:Count1s|CountOnes:CountOne|ones[1]~3    ; 2       ;
-; countOnesTester:Count1s|CountOnes:CountOne|OneCounter~2 ; 2       ;
-; countOnesTester:Count1s|CountOnes:CountOne|OneCounter~1 ; 2       ;
-; countOnesTester:Count1s|bin2hex:Hexdisplay|Mux0~0       ; 1       ;
-; countOnesTester:Count1s|bin2hex:Hexdisplay|Mux1~0       ; 1       ;
-; countOnesTester:Count1s|bin2hex:Hexdisplay|Mux2~0       ; 1       ;
-; countOnesTester:Count1s|bin2hex:Hexdisplay|Mux3~0       ; 1       ;
-; countOnesTester:Count1s|bin2hex:Hexdisplay|Mux4~0       ; 1       ;
-; countOnesTester:Count1s|bin2hex:Hexdisplay|Mux5~0       ; 1       ;
-; countOnesTester:Count1s|bin2hex:Hexdisplay|Mux6~0       ; 1       ;
-; countOnesTester:Count1s|CountOnes:CountOne|OneCounter~6 ; 1       ;
-; countOnesTester:Count1s|CountOnes:CountOne|OneCounter~5 ; 1       ;
-; countOnesTester:Count1s|CountOnes:CountOne|ones[1]~2    ; 1       ;
-+---------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                      ;
++--------------------------------------------------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                                                                     ; Location          ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++--------------------------------------------------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; SW[17]                                                                   ; PIN_V2            ; 55      ; Latch enable ; no     ; --                   ; --               ; --                        ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o1[0] ; LCCOMB_X1_Y18_N20 ; 8       ; Latch enable ; yes    ; Global Clock         ; GCLK3            ; --                        ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o5[0] ; LCCOMB_X1_Y18_N24 ; 8       ; Latch enable ; yes    ; Global Clock         ; GCLK2            ; --                        ;
++--------------------------------------------------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
-+-----------------------------------------------------+
-; Other Routing Usage Summary                         ;
-+-----------------------------+-----------------------+
-; Other Routing Resource Type ; Usage                 ;
-+-----------------------------+-----------------------+
-; Block interconnects         ; 20 / 94,460 ( < 1 % ) ;
-; C16 interconnects           ; 5 / 3,315 ( < 1 % )   ;
-; C4 interconnects            ; 17 / 60,840 ( < 1 % ) ;
-; Direct links                ; 1 / 94,460 ( < 1 % )  ;
-; Global clocks               ; 0 / 16 ( 0 % )        ;
-; Local interconnects         ; 10 / 33,216 ( < 1 % ) ;
-; R24 interconnects           ; 6 / 3,091 ( < 1 % )   ;
-; R4 interconnects            ; 8 / 81,294 ( < 1 % )  ;
-+-----------------------------+-----------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                                  ;
++--------------------------------------------------------------------------+-------------------+---------+----------------------+------------------+---------------------------+
+; Name                                                                     ; Location          ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++--------------------------------------------------------------------------+-------------------+---------+----------------------+------------------+---------------------------+
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o1[0] ; LCCOMB_X1_Y18_N20 ; 8       ; Global Clock         ; GCLK3            ; --                        ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o5[0] ; LCCOMB_X1_Y18_N24 ; 8       ; Global Clock         ; GCLK2            ; --                        ;
++--------------------------------------------------------------------------+-------------------+---------+----------------------+------------------+---------------------------+
 
 
-+---------------------------------------------------------------------------+
-; LAB Logic Elements                                                        ;
-+---------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 10.50) ; Number of LABs  (Total = 2) ;
-+---------------------------------------------+-----------------------------+
-; 1                                           ; 0                           ;
-; 2                                           ; 0                           ;
-; 3                                           ; 0                           ;
-; 4                                           ; 0                           ;
-; 5                                           ; 0                           ;
-; 6                                           ; 0                           ;
-; 7                                           ; 1                           ;
-; 8                                           ; 0                           ;
-; 9                                           ; 0                           ;
-; 10                                          ; 0                           ;
-; 11                                          ; 0                           ;
-; 12                                          ; 0                           ;
-; 13                                          ; 0                           ;
-; 14                                          ; 1                           ;
-; 15                                          ; 0                           ;
-; 16                                          ; 0                           ;
-+---------------------------------------------+-----------------------------+
++---------------------------------------------------------------------------------------------------------------+
+; Non-Global High Fan-Out Signals                                                                               ;
++-----------------------------------------------------------------------------------------------------+---------+
+; Name                                                                                                ; Fan-Out ;
++-----------------------------------------------------------------------------------------------------+---------+
+; SW[17]                                                                                              ; 55      ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o3[0]                            ; 12      ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o7[0]                            ; 11      ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o[0]                             ; 9       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o4[0]                            ; 9       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|LessThan1~14 ; 8       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|mux:MultiplexTwoOne|o[7]~7        ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|mux:MultiplexTwoOne|o[6]~6        ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|mux:MultiplexTwoOne|o[5]~5        ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|mux:MultiplexTwoOne|o[4]~4        ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|mux:MultiplexTwoOne|o[7]~7        ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|mux:MultiplexTwoOne|o[6]~6        ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|mux:MultiplexTwoOne|o[5]~5        ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|mux:MultiplexTwoOne|o[4]~4        ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~29                            ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|mux:MultiplexTwoOne|o[3]~3        ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|mux:MultiplexTwoOne|o[2]~2        ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|mux:MultiplexTwoOne|o[1]~1        ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|mux:MultiplexTwoOne|o[0]~0        ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|mux:MultiplexTwoOne|o[3]~3        ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|mux:MultiplexTwoOne|o[2]~2        ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|mux:MultiplexTwoOne|o[1]~1        ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|mux:MultiplexTwoOne|o[0]~0        ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|LessThan0~14 ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|LessThan1~14 ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|LessThan0~14 ; 7       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[0]                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[1]                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[2]                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[3]                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[4]                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[5]                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[6]                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[7]                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[0]                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[1]                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[2]                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[3]                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[4]                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[5]                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[6]                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[7]                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[4]~26                            ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|Equal0~4     ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|Equal0~4     ; 6       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher|qsig[0]        ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher|qsig[1]        ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher|qsig[2]        ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher|qsig[3]        ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher|qsig[4]        ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher|qsig[5]        ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher|qsig[6]        ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher|qsig[7]        ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher|qsig[0]        ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher|qsig[1]        ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher|qsig[2]        ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher|qsig[3]        ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher|qsig[4]        ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher|qsig[5]        ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher|qsig[6]        ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher|qsig[7]        ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~27                            ; 5       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[8]~30                            ; 4       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[0]~15                            ; 4       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[0]~14                            ; 4       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~72                            ; 3       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[11]~38                           ; 3       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~28                            ; 3       ;
+; KEY[3]                                                                                              ; 2       ;
+; KEY[1]                                                                                              ; 2       ;
+; KEY[0]                                                                                              ; 2       ;
+; SW[0]                                                                                               ; 2       ;
+; SW[1]                                                                                               ; 2       ;
+; SW[2]                                                                                               ; 2       ;
+; SW[3]                                                                                               ; 2       ;
+; SW[4]                                                                                               ; 2       ;
+; SW[5]                                                                                               ; 2       ;
+; SW[6]                                                                                               ; 2       ;
+; SW[7]                                                                                               ; 2       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[8]~76                            ; 2       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[8]~75                            ; 2       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|bin2hex:displayTens|Mux0~0        ; 2       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|bin2hex:displayTens|Mux0~0        ; 2       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|bin2hex:displayOnes|Mux0~0        ; 2       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|bin2hex:displayOnes|Mux0~0        ; 2       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[6]~44                            ; 2       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~24                            ; 2       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o5[0]                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o1[0]                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[13]~78                           ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[10]~77                           ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[3]~74                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~73                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[13]~71                           ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[13]~70                           ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[13]~69                           ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[13]~68                           ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[13]~67                           ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[12]~66                           ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|bin2hex:displayTens|Mux1~0        ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[12]~65                           ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|bin2hex:displayTens|Mux1~0        ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[11]~64                           ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|bin2hex:displayTens|Mux2~0        ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[11]~63                           ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|bin2hex:displayTens|Mux2~0        ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[10]~62                           ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[10]~61                           ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[10]~60                           ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|bin2hex:displayTens|Mux3~0        ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[9]~59                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[9]~58                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|bin2hex:displayTens|Mux4~0        ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[9]~57                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|bin2hex:displayTens|Mux4~0        ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[8]~56                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[8]~55                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|bin2hex:displayTens|Mux5~0        ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[8]~54                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|bin2hex:displayTens|Mux5~0        ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[7]~53                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[7]~52                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[7]~51                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[7]~50                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[6]~49                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[6]~48                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[6]~47                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[6]~46                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[6]~45                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[5]~43                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[5]~42                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[5]~41                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[5]~40                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[4]~39                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|bin2hex:displayOnes|Mux2~0        ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[4]~37                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|bin2hex:displayOnes|Mux2~0        ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[3]~36                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[3]~35                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[3]~34                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|bin2hex:displayOnes|Mux3~0        ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~33                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~32                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~31                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|bin2hex:displayOnes|Mux4~0        ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2]~25                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[1]~23                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[1]~22                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[1]~21                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[1]~20                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[0]~19                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[0]~18                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[0]~17                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[0]~16                            ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|Equal0~3     ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|Equal0~2     ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|Equal0~1     ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|Equal0~0     ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|Equal0~3     ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|Equal0~2     ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|Equal0~1     ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|Equal0~0     ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|LessThan0~13 ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|LessThan0~11 ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|LessThan0~9  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|LessThan0~7  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|LessThan0~5  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|LessThan0~3  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|LessThan0~1  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|LessThan1~13 ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|LessThan1~11 ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|LessThan1~9  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|LessThan1~7  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|LessThan1~5  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|LessThan1~3  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare|LessThan1~1  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|LessThan0~13 ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|LessThan0~11 ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|LessThan0~9  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|LessThan0~7  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|LessThan0~5  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|LessThan0~3  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|LessThan0~1  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|LessThan1~13 ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|LessThan1~11 ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|LessThan1~9  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|LessThan1~7  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|LessThan1~5  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|LessThan1~3  ; 1       ;
+; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare|LessThan1~1  ; 1       ;
++-----------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------+
+; Other Routing Usage Summary                          ;
++-----------------------------+------------------------+
+; Other Routing Resource Type ; Usage                  ;
++-----------------------------+------------------------+
+; Block interconnects         ; 215 / 94,460 ( < 1 % ) ;
+; C16 interconnects           ; 22 / 3,315 ( < 1 % )   ;
+; C4 interconnects            ; 97 / 60,840 ( < 1 % )  ;
+; Direct links                ; 45 / 94,460 ( < 1 % )  ;
+; Global clocks               ; 2 / 16 ( 13 % )        ;
+; Local interconnects         ; 72 / 33,216 ( < 1 % )  ;
+; R24 interconnects           ; 49 / 3,091 ( 2 % )     ;
+; R4 interconnects            ; 144 / 81,294 ( < 1 % ) ;
++-----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
-; LAB Signals Sourced                                                        ;
-+----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 10.50) ; Number of LABs  (Total = 2) ;
-+----------------------------------------------+-----------------------------+
-; 0                                            ; 0                           ;
-; 1                                            ; 0                           ;
-; 2                                            ; 0                           ;
-; 3                                            ; 0                           ;
-; 4                                            ; 0                           ;
-; 5                                            ; 0                           ;
-; 6                                            ; 0                           ;
-; 7                                            ; 1                           ;
-; 8                                            ; 0                           ;
-; 9                                            ; 0                           ;
-; 10                                           ; 0                           ;
-; 11                                           ; 0                           ;
-; 12                                           ; 0                           ;
-; 13                                           ; 0                           ;
-; 14                                           ; 1                           ;
-+----------------------------------------------+-----------------------------+
+; LAB Logic Elements                                                         ;
++---------------------------------------------+------------------------------+
+; Number of Logic Elements  (Average = 12.71) ; Number of LABs  (Total = 14) ;
++---------------------------------------------+------------------------------+
+; 1                                           ; 0                            ;
+; 2                                           ; 1                            ;
+; 3                                           ; 0                            ;
+; 4                                           ; 0                            ;
+; 5                                           ; 0                            ;
+; 6                                           ; 1                            ;
+; 7                                           ; 1                            ;
+; 8                                           ; 0                            ;
+; 9                                           ; 0                            ;
+; 10                                          ; 1                            ;
+; 11                                          ; 0                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 1                            ;
+; 14                                          ; 1                            ;
+; 15                                          ; 2                            ;
+; 16                                          ; 6                            ;
++---------------------------------------------+------------------------------+
 
 
-+-------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                       ;
-+-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 5.50) ; Number of LABs  (Total = 2) ;
-+-------------------------------------------------+-----------------------------+
-; 0                                               ; 0                           ;
-; 1                                               ; 0                           ;
-; 2                                               ; 0                           ;
-; 3                                               ; 0                           ;
-; 4                                               ; 1                           ;
-; 5                                               ; 0                           ;
-; 6                                               ; 0                           ;
-; 7                                               ; 1                           ;
-+-------------------------------------------------+-----------------------------+
++-----------------------------------------------------------------------------+
+; LAB Signals Sourced                                                         ;
++----------------------------------------------+------------------------------+
+; Number of Signals Sourced  (Average = 10.71) ; Number of LABs  (Total = 14) ;
++----------------------------------------------+------------------------------+
+; 0                                            ; 0                            ;
+; 1                                            ; 0                            ;
+; 2                                            ; 2                            ;
+; 3                                            ; 0                            ;
+; 4                                            ; 0                            ;
+; 5                                            ; 0                            ;
+; 6                                            ; 2                            ;
+; 7                                            ; 1                            ;
+; 8                                            ; 0                            ;
+; 9                                            ; 1                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 0                            ;
+; 12                                           ; 0                            ;
+; 13                                           ; 0                            ;
+; 14                                           ; 1                            ;
+; 15                                           ; 2                            ;
+; 16                                           ; 4                            ;
++----------------------------------------------+------------------------------+
 
 
-+---------------------------------------------------------------------------+
-; LAB Distinct Inputs                                                       ;
-+---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 6.00) ; Number of LABs  (Total = 2) ;
-+---------------------------------------------+-----------------------------+
-; 0                                           ; 0                           ;
-; 1                                           ; 0                           ;
-; 2                                           ; 0                           ;
-; 3                                           ; 0                           ;
-; 4                                           ; 1                           ;
-; 5                                           ; 0                           ;
-; 6                                           ; 0                           ;
-; 7                                           ; 0                           ;
-; 8                                           ; 1                           ;
-+---------------------------------------------+-----------------------------+
++--------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                        ;
++-------------------------------------------------+------------------------------+
+; Number of Signals Sourced Out  (Average = 8.21) ; Number of LABs  (Total = 14) ;
++-------------------------------------------------+------------------------------+
+; 0                                               ; 0                            ;
+; 1                                               ; 0                            ;
+; 2                                               ; 3                            ;
+; 3                                               ; 0                            ;
+; 4                                               ; 0                            ;
+; 5                                               ; 0                            ;
+; 6                                               ; 1                            ;
+; 7                                               ; 1                            ;
+; 8                                               ; 2                            ;
+; 9                                               ; 2                            ;
+; 10                                              ; 1                            ;
+; 11                                              ; 2                            ;
+; 12                                              ; 0                            ;
+; 13                                              ; 0                            ;
+; 14                                              ; 1                            ;
+; 15                                              ; 0                            ;
+; 16                                              ; 1                            ;
++-------------------------------------------------+------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                         ;
++----------------------------------------------+------------------------------+
+; Number of Distinct Inputs  (Average = 12.36) ; Number of LABs  (Total = 14) ;
++----------------------------------------------+------------------------------+
+; 0                                            ; 0                            ;
+; 1                                            ; 0                            ;
+; 2                                            ; 1                            ;
+; 3                                            ; 0                            ;
+; 4                                            ; 1                            ;
+; 5                                            ; 1                            ;
+; 6                                            ; 0                            ;
+; 7                                            ; 1                            ;
+; 8                                            ; 0                            ;
+; 9                                            ; 1                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 1                            ;
+; 12                                           ; 0                            ;
+; 13                                           ; 1                            ;
+; 14                                           ; 0                            ;
+; 15                                           ; 0                            ;
+; 16                                           ; 2                            ;
+; 17                                           ; 1                            ;
+; 18                                           ; 0                            ;
+; 19                                           ; 1                            ;
+; 20                                           ; 0                            ;
+; 21                                           ; 1                            ;
+; 22                                           ; 0                            ;
+; 23                                           ; 1                            ;
++----------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -1794,464 +2077,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
-Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (119006): Selected device EP2C35F672C6 for design "test_bench"
-Info (21077): Low junction temperature is 0 degrees C
-Info (21077): High junction temperature is 85 degrees C
-Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
-Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
-Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
-    Info (176445): Device EP2C50F672C6 is compatible
-    Info (176445): Device EP2C70F672C6 is compatible
-Info (169124): Fitter converted 3 user pins into dedicated programming pins
-    Info (169125): Pin ~ASDO~ is reserved at location E3
-    Info (169125): Pin ~nCSO~ is reserved at location D3
-    Info (169125): Pin ~LVDS150p/nCEO~ is reserved at location AE24
-Critical Warning (332012): Synopsys Design Constraints File file not found: 'test_bench.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
-Info (332144): No user constrained base clocks found in the design
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
-Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
-Info (176233): Starting register packing
-Info (176235): Finished register packing
-    Extra Info (176219): No registers were packed into other blocks
-Warning (15705): Ignored locations or region assignments to the following nodes
-    Warning (15706): Node "AUD_ADCDAT" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "AUD_ADCLRCK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "AUD_BCLK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "AUD_DACDAT" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "AUD_DACLRCK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "AUD_XCK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "CLOCK_27" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "CLOCK_50" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_ADDR[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_ADDR[10]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_ADDR[11]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_ADDR[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_ADDR[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_ADDR[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_ADDR[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_ADDR[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_ADDR[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_ADDR[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_ADDR[8]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_ADDR[9]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_BA_0" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_BA_1" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_CAS_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_CKE" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_CLK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_CS_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_DQ[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_DQ[10]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_DQ[11]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_DQ[12]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_DQ[13]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_DQ[14]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_DQ[15]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_DQ[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_DQ[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_DQ[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_DQ[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_DQ[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_DQ[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_DQ[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_DQ[8]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_DQ[9]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_LDQM" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_RAS_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_UDQM" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "DRAM_WE_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_CLK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_CMD" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_CS_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_DATA[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_DATA[10]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_DATA[11]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_DATA[12]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_DATA[13]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_DATA[14]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_DATA[15]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_DATA[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_DATA[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_DATA[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_DATA[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_DATA[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_DATA[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_DATA[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_DATA[8]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_DATA[9]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_INT" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_RD_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_RST_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "ENET_WR_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "EXT_CLOCK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[10]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[11]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[12]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[13]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[14]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[15]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[16]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[17]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[18]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[19]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[20]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[21]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[8]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_ADDR[9]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_CE_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_DQ[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_DQ[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_DQ[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_DQ[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_DQ[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_DQ[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_DQ[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_DQ[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_OE_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_RST_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "FL_WE_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[10]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[11]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[12]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[13]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[14]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[15]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[16]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[17]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[18]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[19]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[20]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[21]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[22]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[23]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[24]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[25]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[26]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[27]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[28]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[29]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[30]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[31]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[32]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[33]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[34]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[35]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[8]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[9]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[10]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[11]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[12]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[13]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[14]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[15]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[16]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[17]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[18]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[19]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[20]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[21]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[22]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[23]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[24]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[25]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[26]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[27]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[28]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[29]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[30]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[31]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[32]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[33]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[34]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[35]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[8]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_1[9]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "I2C_SCLK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "I2C_SDAT" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "IRDA_RXD" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "IRDA_TXD" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LCD_BLON" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LCD_DATA[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LCD_DATA[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LCD_DATA[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LCD_DATA[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LCD_DATA[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LCD_DATA[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LCD_DATA[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LCD_DATA[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LCD_EN" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LCD_ON" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LCD_RS" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LCD_RW" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[8]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_ADDR[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_ADDR[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_CS_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DACK0_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DACK1_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DATA[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DATA[10]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DATA[11]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DATA[12]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DATA[13]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DATA[14]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DATA[15]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DATA[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DATA[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DATA[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DATA[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DATA[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DATA[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DATA[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DATA[8]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DATA[9]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DREQ0" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_DREQ1" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_FSPEED" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_INT0" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_INT1" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_LSPEED" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_RD_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_RST_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "OTG_WR_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "PS2_CLK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "PS2_DAT" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SD_CLK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SD_CMD" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SD_DAT" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SD_DAT3" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[10]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[11]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[12]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[13]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[14]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[15]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[16]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[17]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[8]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_ADDR[9]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_CE_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_DQ[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_DQ[10]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_DQ[11]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_DQ[12]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_DQ[13]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_DQ[14]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_DQ[15]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_DQ[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_DQ[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_DQ[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_DQ[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_DQ[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_DQ[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_DQ[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_DQ[8]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_DQ[9]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_LB_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_OE_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_UB_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SRAM_WE_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "TCK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "TCS" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "TDI" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "TDO" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "TD_DATA[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "TD_DATA[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "TD_DATA[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "TD_DATA[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "TD_DATA[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "TD_DATA[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "TD_DATA[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "TD_DATA[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "TD_HS" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "TD_RESET" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "TD_VS" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "UART_RXD" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "UART_TXD" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_BLANK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[8]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[9]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_CLK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[8]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[9]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_HS" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[8]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[9]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_SYNC" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_VS" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
-Info (170189): Fitter placement preparation operations beginning
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
-Info (170191): Fitter placement operations beginning
-Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
-Info (170193): Fitter routing operations beginning
-Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X22_Y0 to location X32_Y11
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
-    Info (170201): Optimizations that may affect the design's routability were skipped
-    Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.11 seconds.
-Info (306004): Started post-fitting delay annotation
-Warning (306006): Found 74 output pins without output pin load capacitance assignment
-    Info (306007): Pin "HEX0[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX0[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX0[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX0[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX0[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX0[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX0[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX1[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX1[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX1[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX1[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX1[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX1[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX1[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX2[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX2[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX2[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX2[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX2[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX2[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX2[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX3[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX3[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX3[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX3[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX3[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX3[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX3[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX4[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX4[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX4[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX4[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX4[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX4[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX4[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX5[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX5[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX5[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX5[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX5[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX5[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX5[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX6[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX6[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX6[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX6[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX6[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX6[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX6[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX7[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX7[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX7[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX7[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX7[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX7[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "HEX7[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[10]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[11]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[12]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[16]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "LEDR[17]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-Info (306005): Delay annotation completed successfully
-Info (306004): Started post-fitting delay annotation
-Info (306005): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
-Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
-Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info (144001): Generated suppressed messages file C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/test_bench.fit.smsg
-Info: Quartus II 32-bit Fitter was successful. 0 errors, 337 warnings
-    Info: Peak virtual memory: 512 megabytes
-    Info: Processing ended: Sun Apr 19 15:04:01 2020
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:07
-
-
-+----------------------------+
-; Fitter Suppressed Messages ;
-+----------------------------+
-The suppressed messages can be found in C:/DSD/ex05_sequential-style_combinatorial_designs/vhdl/test_bench.fit.smsg.
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Fitter
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Mon Apr 20 22:32:00 2020
+Info: Command: quartus_fit test_bench --read_settings_files=on --write_settings_files=off
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = test_bench
+Info: Revision = test_bench
 
 
