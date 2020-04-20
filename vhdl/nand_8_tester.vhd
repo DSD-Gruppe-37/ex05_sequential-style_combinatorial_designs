@@ -3,14 +3,14 @@ USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
 USE work.ALL;
 
-ENTITY nand8_tester IS
+ENTITY nand_8_tester IS
     PORT (
         SW    : IN std_logic_vector(7 DOWNTO 0);
         LEDR0 : OUT std_logic
     );
-END ENTITY nand8_tester;
+END ENTITY nand_8_tester;
 
-ARCHITECTURE testbench OF nand8_tester IS
+ARCHITECTURE testbench OF nand_8_tester IS
 BEGIN
 
     UUT : ENTITY nand_8
