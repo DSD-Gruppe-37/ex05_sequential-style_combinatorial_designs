@@ -3,8 +3,7 @@ USE ieee.std_logic_1164.ALL;
 USE work.ALL;
 
 ENTITY test_bench IS
-    PORT
-    (
+    PORT (
         SW   : IN std_logic_vector(17 DOWNTO 0);
         KEY  : IN std_logic_vector(3 DOWNTO 0);
         HEX0 : OUT std_logic_vector(6 DOWNTO 0);
@@ -54,14 +53,6 @@ BEGIN
     --        hex10  => HEX7(6 DOWNTO 0)  -- 7-seg tens
     --        );
 
-    --    Hexdisplay : ENTITY bin2hex(Behavioral)
-    --        PORT MAP
-    --        (
-    --            -- INPUTS
-    --            bin(3 DOWNTO 0)  => SW(3 DOWNTO 0),
-    --            -- OUTPUTS
-    --            Sseg(6 DOWNTO 0) => HEX0(6 DOWNTO 0)
-    --        );   
     Count1s : ENTITY countOnesTester
         PORT MAP
         (

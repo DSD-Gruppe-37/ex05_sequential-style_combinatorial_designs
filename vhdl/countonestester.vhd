@@ -4,8 +4,7 @@ USE IEEE.numeric_std.ALL;
 USE work.ALL;
 
 ENTITY countOnesTester IS
-    PORT
-    (
+    PORT (
         a_in   : IN std_logic_vector(7 DOWNTO 0);
         hexout : OUT std_logic_vector(6 DOWNTO 0)
     );
@@ -25,12 +24,11 @@ BEGIN
         );
 
     Hexdisplay : ENTITY bin2hex(Behavioral)
-        PORT
-        MAP
+        PORT MAP
         (
-        -- INPUTS
-        bin  => OnesCount,
-        -- OUTPUTS
-        Sseg => hexout
+            -- INPUTS
+            bin => OnesCount,
+            -- OUTPUTS
+            seg => hexout
         );
 END ARCHITECTURE rtl;

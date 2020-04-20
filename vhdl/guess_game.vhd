@@ -2,8 +2,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE work.ALL;
 ENTITY guess_game IS
-    PORT
-    (
+    PORT (
         inputs : IN std_logic_vector(7 DOWNTO 0);
         set    : IN std_logic;                     -- set predef. vals.
         show   : IN std_logic;                     -- show predef. vals.
@@ -25,19 +24,18 @@ BEGIN
         PORT MAP
         (
             -- INPUTS
-            bin(3 DOWNTO 0)  => muxTwoOut(3 DOWNTO 0),
+            bin(3 DOWNTO 0) => muxTwoOut(3 DOWNTO 0),
             -- OUTPUTS
-            Sseg(6 DOWNTO 0) => bin2hexOut(6 DOWNTO 0)
+            seg(6 DOWNTO 0) => bin2hexOut(6 DOWNTO 0)
         );
 
-    displayTens : ENTITY bin2hex(BlankZero)
-        PORT
-        MAP
+    displayTens : ENTITY bin2hex(blank_zero)
+        PORT MAP
         (
-        -- INPUTS
-        bin(3 DOWNTO 0)  => muxTwoOut(7 DOWNTO 4),
-        -- OUTPUTS
-        Sseg(6 DOWNTO 0) => bin2hexOut(13 DOWNTO 7)
+            -- INPUTS
+            bin(3 DOWNTO 0) => muxTwoOut(7 DOWNTO 4),
+            -- OUTPUTS
+            seg(6 DOWNTO 0) => bin2hexOut(13 DOWNTO 7)
         );
 
     Latcher : ENTITY guesslatch
