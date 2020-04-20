@@ -3,8 +3,7 @@ USE ieee.std_logic_1164.ALL;
 USE work.ALL;
 
 ENTITY test_bench IS
-    PORT
-    (
+    PORT (
         SW   : IN std_logic_vector(17 DOWNTO 0);
         KEY  : IN std_logic_vector(3 DOWNTO 0);
         HEX0 : OUT std_logic_vector(6 DOWNTO 0);
@@ -55,6 +54,7 @@ BEGIN
     --        hex10  => HEX7(6 DOWNTO 0)  -- 7-seg tens
     --        );
 
+<<<<<<< HEAD
     --    Hexdisplay : ENTITY bin2hex(Behavioral)
     --        PORT MAP
     --        (
@@ -71,8 +71,21 @@ BEGIN
     --         --OUTPUTS
     --         hexout(6 DOWNTO 0) => HEX0(6 DOWNTO 0)
     --     );
+=======
+    Count1s : ENTITY countOnesTester
+        PORT MAP
+        (
+            --INPUTS
+            A_in(7 DOWNTO 0) => SW(7 DOWNTO 0),
+            --OUTPUTS
+            hexout(6 DOWNTO 0) => HEX0(6 DOWNTO 0)
+        );
+>>>>>>> 4d03ebb03355dd6138bdfdb6c3a434b72d73b0d9
 
-    --    LatchEnt : ENTITY guesslatch(latch)
+    --    LatchEnt : ENTITY generic_latch
+    --        GENERIC MAP(
+    --            bits => 8
+    --        )
     --        PORT MAP
     --        (
     --            -- INPUTS         
@@ -86,11 +99,11 @@ BEGIN
     --        PORT MAP
     --        (
     --            -- INPUTS         
-    --            tryin => key(0),
+    --            en => key(0),
     --            a     => SW(11 DOWNTO 4),
     --            b     => SW(7 DOWNTO 0),
     --            -- OUTPUTS
-    --            o     => LEDR(9 DOWNTO 8) -- Dummy 9;8
+    --            comp     => LEDR(9 DOWNTO 8) -- Dummy 9;8
     --        );
 
     --    MuxFourEnt : ENTITY muxFour

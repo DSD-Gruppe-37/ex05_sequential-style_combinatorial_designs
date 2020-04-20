@@ -488,4 +488,4 @@ set_global_assignment -name VHDL_FILE guess_game.vhd
 set_global_assignment -name VHDL_FILE countonestester.vhd
 set_global_assignment -name VHDL_FILE CountOnes.vhd
 set_global_assignment -name VHDL_FILE CompareLogic.vhd
-set_global_assignment -name VHDL_FILE bin2sevenseg.vhd
+set_global_assignment -name VHDL_FILE bin2hex.vhd

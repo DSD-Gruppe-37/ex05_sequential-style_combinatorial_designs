@@ -7,8 +7,8 @@ USE ieee.std_logic_1164.ALL;
 ENTITY mux IS
     PORT
     (
-        inSelect                      : IN std_logic_vector(1 DOWNTO 0);   -- Selector
-        inA, inB, inC, inD            : IN std_logic_vector(13 DOWNTO 0);  -- input vectors
+        inSelect                      : IN std_logic_vector(1 DOWNTO 0);  -- Selector
+        inA, inB, inC, inD            : IN std_logic_vector(13 DOWNTO 0); -- input vectors
         o, o1, o2, o3, o4, o5, o6, o7 : OUT std_logic_vector(13 DOWNTO 0) -- Output vectors
     );
 END mux;
@@ -40,9 +40,9 @@ BEGIN
     muxProcess : PROCESS (inSelect(0), inA, inB)
     BEGIN
         CASE(inSelect(0)) IS
-            WHEN '1'    => o(13 DOWNTO 0)    <= inA(13 DOWNTO 0);  
-            WHEN '0'    => o(13 DOWNTO 0)    <= inB(13 DOWNTO 0);   
-            WHEN OTHERS => o(13 DOWNTO 0) <= inA(13 DOWNTO 0);    
+            WHEN '1'    => o(13 DOWNTO 0)    <= inA(13 DOWNTO 0);
+            WHEN '0'    => o(13 DOWNTO 0)    <= inB(13 DOWNTO 0);
+            WHEN OTHERS => o(13 DOWNTO 0) <= inA(13 DOWNTO 0);
         END CASE;
     END PROCESS; -- muxProcess
 END muxTwo;  -- muxTwo
