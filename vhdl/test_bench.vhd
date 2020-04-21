@@ -21,7 +21,7 @@ END;
 ARCHITECTURE structural OF test_bench IS
 BEGIN
 
-   -- Turn off HEX (Active low...)
+    -- Turn off HEX (Active low...)
     -- HEX0 <= ("1111111");
     -- HEX1 <= ("1111111");
     HEX2 <= ("1111111");
@@ -30,18 +30,18 @@ BEGIN
     HEX5 <= ("1111111");
     -- HEX6 <= ("1111111");
     HEX7 <= ("1111111");
-       TwoPlayerGuessGame : ENTITY two_player_guess_game
-           PORT MAP
-           (
-               inputs    => SW(7 DOWNTO 0),   -- inputs
-               playerSel => SW(17),           -- Player Select
-               set       => key(3),           -- set predef. vals.
-               show      => key(1),           -- show predef. vals.
-               try       => key(0),           -- eval. guess
-               hexPlayer => HEX6(6 DOWNTO 0), -- 7-seg ones
-               hexOnes   => HEX0(6 DOWNTO 0), -- 7-seg ones
-               hexTens   => HEX1(6 DOWNTO 0)  -- 7-seg tens
-           );
+    TwoPlayerGuessGame : ENTITY two_player_guess_game
+        PORT MAP
+        (
+            inputs    => SW(7 DOWNTO 0),   -- inputs
+            playerSel => SW(17),           -- Player Select
+            set       => key(3),           -- set predef. vals.
+            show      => key(1),           -- show predef. vals.
+            try       => key(0),           -- eval. guess
+            hexPlayer => HEX6(6 DOWNTO 0), -- 7-seg ones
+            hexOnes   => HEX0(6 DOWNTO 0), -- 7-seg ones
+            hexTens   => HEX1(6 DOWNTO 0)  -- 7-seg tens
+        );
 
     --    GuessGame : ENTITY guess_game
     --        PORT MAP
@@ -54,7 +54,6 @@ BEGIN
     --        hex10  => HEX7(6 DOWNTO 0)  -- 7-seg tens
     --        );
 
-<<<<<<< HEAD
     --    Hexdisplay : ENTITY bin2hex(Behavioral)
     --        PORT MAP
     --        (
@@ -71,16 +70,6 @@ BEGIN
     --         --OUTPUTS
     --         hexout(6 DOWNTO 0) => HEX0(6 DOWNTO 0)
     --     );
-=======
-    Count1s : ENTITY countOnesTester
-        PORT MAP
-        (
-            --INPUTS
-            A_in(7 DOWNTO 0) => SW(7 DOWNTO 0),
-            --OUTPUTS
-            hexout(6 DOWNTO 0) => HEX0(6 DOWNTO 0)
-        );
->>>>>>> 4d03ebb03355dd6138bdfdb6c3a434b72d73b0d9
 
     --    LatchEnt : ENTITY generic_latch
     --        GENERIC MAP(
