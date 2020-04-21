@@ -1,6 +1,6 @@
 Analysis & Synthesis report for test_bench
-Mon Apr 20 22:32:00 2020
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Tue Apr 21 08:50:39 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -13,15 +13,10 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Port Connectivity Checks: "two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer"
- 12. Port Connectivity Checks: "two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect"
- 13. Port Connectivity Checks: "two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|mux:MultiplexTwoOne"
- 14. Port Connectivity Checks: "two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|mux:MultiplexFourOne"
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: nand_8:UUT
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -47,16 +42,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 20 22:32:00 2020           ;
-; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 21 08:50:38 2020           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; test_bench                                      ;
-; Top-level Entity Name              ; test_bench                                      ;
+; Top-level Entity Name              ; nand_8_tester                                   ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 178                                             ;
-;     Total combinational functions  ; 178                                             ;
+; Total logic elements               ; 3                                               ;
+;     Total combinational functions  ; 3                                               ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 96                                              ;
+; Total pins                         ; 9                                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -70,7 +65,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; test_bench         ; test_bench         ;
+; Top-level entity name                                                      ; nand_8_tester      ; test_bench         ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -160,125 +155,64 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                     ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                              ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
-; two_player_guess_game.vhd        ; yes             ; User VHDL File  ; C:/DSD/dsd_journal_03/ex05/vhdl/two_player_guess_game.vhd ;         ;
-; test_bench.vhd                   ; yes             ; User VHDL File  ; C:/DSD/dsd_journal_03/ex05/vhdl/test_bench.vhd            ;         ;
-; nand8.vhd                        ; yes             ; User VHDL File  ; C:/DSD/dsd_journal_03/ex05/vhdl/nand8.vhd                 ;         ;
-; mux.vhd                          ; yes             ; User VHDL File  ; C:/DSD/dsd_journal_03/ex05/vhdl/mux.vhd                   ;         ;
-; latch.vhd                        ; yes             ; User VHDL File  ; C:/DSD/dsd_journal_03/ex05/vhdl/latch.vhd                 ;         ;
-; guess_game.vhd                   ; yes             ; User VHDL File  ; C:/DSD/dsd_journal_03/ex05/vhdl/guess_game.vhd            ;         ;
-; countonestester.vhd              ; yes             ; User VHDL File  ; C:/DSD/dsd_journal_03/ex05/vhdl/countonestester.vhd       ;         ;
-; CountOnes.vhd                    ; yes             ; User VHDL File  ; C:/DSD/dsd_journal_03/ex05/vhdl/CountOnes.vhd             ;         ;
-; CompareLogic.vhd                 ; yes             ; User VHDL File  ; C:/DSD/dsd_journal_03/ex05/vhdl/CompareLogic.vhd          ;         ;
-; bin2sevenseg.vhd                 ; yes             ; User VHDL File  ; C:/DSD/dsd_journal_03/ex05/vhdl/bin2sevenseg.vhd          ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                   ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------+---------+
+; bin2hex_tester.vhd               ; yes             ; User VHDL File  ; C:/au_exercises/dsd/assignments_g37/ex05_sequential-style_combinatorial_designs/vhdl/bin2hex_tester.vhd        ;         ;
+; bin2hex.vhd                      ; yes             ; User VHDL File  ; C:/au_exercises/dsd/assignments_g37/ex05_sequential-style_combinatorial_designs/vhdl/bin2hex.vhd               ;         ;
+; CompareLogic.vhd                 ; yes             ; User VHDL File  ; C:/au_exercises/dsd/assignments_g37/ex05_sequential-style_combinatorial_designs/vhdl/CompareLogic.vhd          ;         ;
+; count_ones.vhd                   ; yes             ; User VHDL File  ; C:/au_exercises/dsd/assignments_g37/ex05_sequential-style_combinatorial_designs/vhdl/count_ones.vhd            ;         ;
+; guess_game.vhd                   ; yes             ; User VHDL File  ; C:/au_exercises/dsd/assignments_g37/ex05_sequential-style_combinatorial_designs/vhdl/guess_game.vhd            ;         ;
+; latch.vhd                        ; yes             ; User VHDL File  ; C:/au_exercises/dsd/assignments_g37/ex05_sequential-style_combinatorial_designs/vhdl/latch.vhd                 ;         ;
+; mux.vhd                          ; yes             ; User VHDL File  ; C:/au_exercises/dsd/assignments_g37/ex05_sequential-style_combinatorial_designs/vhdl/mux.vhd                   ;         ;
+; nand_8_tester.vhd                ; yes             ; User VHDL File  ; C:/au_exercises/dsd/assignments_g37/ex05_sequential-style_combinatorial_designs/vhdl/nand_8_tester.vhd         ;         ;
+; nand_8.vhd                       ; yes             ; User VHDL File  ; C:/au_exercises/dsd/assignments_g37/ex05_sequential-style_combinatorial_designs/vhdl/nand_8.vhd                ;         ;
+; test_bench.vhd                   ; yes             ; User VHDL File  ; C:/au_exercises/dsd/assignments_g37/ex05_sequential-style_combinatorial_designs/vhdl/test_bench.vhd            ;         ;
+; two_player_guess_game.vhd        ; yes             ; User VHDL File  ; C:/au_exercises/dsd/assignments_g37/ex05_sequential-style_combinatorial_designs/vhdl/two_player_guess_game.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary          ;
-+---------------------------------------------+--------+
-; Resource                                    ; Usage  ;
-+---------------------------------------------+--------+
-; Estimated Total logic elements              ; 178    ;
-;                                             ;        ;
-; Total combinational functions               ; 178    ;
-; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 80     ;
-;     -- 3 input functions                    ; 87     ;
-;     -- <=2 input functions                  ; 11     ;
-;                                             ;        ;
-; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 150    ;
-;     -- arithmetic mode                      ; 28     ;
-;                                             ;        ;
-; Total registers                             ; 0      ;
-;     -- Dedicated logic registers            ; 0      ;
-;     -- I/O registers                        ; 0      ;
-;                                             ;        ;
-; I/O pins                                    ; 96     ;
-; Embedded Multiplier 9-bit elements          ; 0      ;
-; Maximum fan-out node                        ; SW[17] ;
-; Maximum fan-out                             ; 55     ;
-; Total fan-out                               ; 621    ;
-; Average fan-out                             ; 2.27   ;
-+---------------------------------------------+--------+
++--------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                        ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Estimated Total logic elements              ; 3                    ;
+;                                             ;                      ;
+; Total combinational functions               ; 3                    ;
+; Logic element usage by number of LUT inputs ;                      ;
+;     -- 4 input functions                    ; 2                    ;
+;     -- 3 input functions                    ; 0                    ;
+;     -- <=2 input functions                  ; 1                    ;
+;                                             ;                      ;
+; Logic elements by mode                      ;                      ;
+;     -- normal mode                          ; 3                    ;
+;     -- arithmetic mode                      ; 0                    ;
+;                                             ;                      ;
+; Total registers                             ; 0                    ;
+;     -- Dedicated logic registers            ; 0                    ;
+;     -- I/O registers                        ; 0                    ;
+;                                             ;                      ;
+; I/O pins                                    ; 9                    ;
+; Embedded Multiplier 9-bit elements          ; 0                    ;
+; Maximum fan-out node                        ; nand_8:UUT|nandOut~0 ;
+; Maximum fan-out                             ; 1                    ;
+; Total fan-out                               ; 11                   ;
+; Average fan-out                             ; 0.92                 ;
++---------------------------------------------+----------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                           ;
-+-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                ; Library Name ;
-+-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------+--------------+
-; |test_bench                                   ; 178 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 96   ; 0            ; |test_bench                                                                                        ; work         ;
-;    |two_player_guess_game:TwoPlayerGuessGame| ; 178 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame                                               ; work         ;
-;       |guess_game:playerOneGame|              ; 47 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame                      ; work         ;
-;          |CompareLogic:Compare|               ; 21 (21)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare ; work         ;
-;          |bin2hex:displayOnes|                ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|bin2hex:displayOnes  ; work         ;
-;          |bin2hex:displayTens|                ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|bin2hex:displayTens  ; work         ;
-;          |guesslatch:Latcher|                 ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher   ; work         ;
-;          |mux:MultiplexTwoOne|                ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|mux:MultiplexTwoOne  ; work         ;
-;       |guess_game:playerTwoGame|              ; 44 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame                      ; work         ;
-;          |CompareLogic:Compare|               ; 21 (21)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|CompareLogic:Compare ; work         ;
-;          |bin2hex:displayOnes|                ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|bin2hex:displayOnes  ; work         ;
-;          |bin2hex:displayTens|                ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|bin2hex:displayTens  ; work         ;
-;          |guesslatch:Latcher|                 ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher   ; work         ;
-;          |mux:MultiplexTwoOne|                ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|mux:MultiplexTwoOne  ; work         ;
-;       |mux:MultiplexPlayerSelect|             ; 22 (22)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect                     ; work         ;
-;       |mux:MultiplexShowPlayer|               ; 65 (65)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer                       ; work         ;
-+-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                               ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name       ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+--------------+
+; |nand_8_tester             ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 9    ; 0            ; |nand_8_tester            ; work         ;
+;    |nand_8:UUT|            ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |nand_8_tester|nand_8:UUT ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                                                                                              ;
-+----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+------------------------+
-; Latch Name                                                                                   ; Latch Enable Signal                                                      ; Free of Timing Hazards ;
-+----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+------------------------+
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o7[0]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher|qsig[0] ; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o5[0] ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[0]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher|qsig[1] ; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o5[0] ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[1]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher|qsig[2] ; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o5[0] ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[2]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher|qsig[3] ; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o5[0] ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[3]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher|qsig[4] ; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o5[0] ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[4]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher|qsig[5] ; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o5[0] ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[5]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher|qsig[6] ; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o5[0] ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[6]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerTwoGame|guesslatch:Latcher|qsig[7] ; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o5[0] ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o6[7]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o4[0]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o3[0]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher|qsig[0] ; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o1[0] ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[0]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher|qsig[1] ; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o1[0] ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[1]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher|qsig[2] ; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o1[0] ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[2]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher|qsig[3] ; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o1[0] ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[3]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher|qsig[4] ; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o1[0] ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[4]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher|qsig[5] ; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o1[0] ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[5]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher|qsig[6] ; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o1[0] ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[6]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher|qsig[7] ; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o1[0] ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o2[7]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o[0]                      ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o5[0]                     ; SW[17]                                                                   ; yes                    ;
-; two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect|o1[0]                     ; SW[17]                                                                   ; yes                    ;
-; Number of user-specified and inferred latches = 38                                           ;                                                                          ;                        ;
-+----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -296,83 +230,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[0] ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |test_bench|two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer|o[2] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexShowPlayer"                   ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; inc  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; ind  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; o1   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o2   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o3   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o4   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o5   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o6   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o7   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect"                      ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; o[13..1]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o1[13..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o2[13..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o3[13..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o4[13..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o5[13..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o6[13..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o7[13..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|mux:MultiplexTwoOne"  ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; inc      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; ind      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; o[13..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o1       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o2       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o3       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o4       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o5       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o6       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o7       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|mux:MultiplexFourOne" ;
-+------+--------+----------+-----------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                 ;
-+------+--------+----------+-----------------------------------------------------------------------------------------+
-; inb  ; Input  ; Info     ; Stuck at GND                                                                            ;
-; inc  ; Input  ; Info     ; Stuck at GND                                                                            ;
-; ind  ; Input  ; Info     ; Stuck at GND                                                                            ;
-; o1   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.     ;
-; o2   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.     ;
-; o3   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.     ;
-; o4   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.     ;
-; o5   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.     ;
-; o6   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.     ;
-; o7   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.     ;
-+------+--------+----------+-----------------------------------------------------------------------------------------+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: nand_8:UUT ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; bits           ; 8     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------+
@@ -380,7 +245,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -388,227 +253,60 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit Analysis & Synthesis
+Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
-    Info: Your use of Altera Corporation's design tools, logic functions 
-    Info: and other software and tools, and its AMPP partner logic 
-    Info: functions, and any output files from any of the foregoing 
-    Info: (including device programming or simulation files), and any 
-    Info: associated documentation or information are expressly subject 
-    Info: to the terms and conditions of the Altera Program License 
-    Info: Subscription Agreement, Altera MegaCore Function License 
-    Info: Agreement, or other applicable license agreement, including, 
-    Info: without limitation, that your use is for the sole purpose of 
-    Info: programming logic devices manufactured by Altera and sold by 
-    Info: Altera or its authorized distributors.  Please refer to the 
-    Info: applicable agreement for further details.
-    Info: Processing started: Mon Apr 20 22:31:53 2020
-Info: Command: quartus_map test_bench --read_settings_files=on --write_settings_files=off
+    Info: Processing started: Tue Apr 21 08:50:37 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off test_bench -c test_bench
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 1 entities, in source file two_player_guess_game.vhd
-    Info (12022): Found design unit 1: two_player_guess_game-TwoPlayerGame
-    Info (12023): Found entity 1: two_player_guess_game
-Info (12021): Found 2 design units, including 1 entities, in source file test_bench.vhd
-    Info (12022): Found design unit 1: test_bench-structural
-    Info (12023): Found entity 1: test_bench
-Info (12021): Found 2 design units, including 1 entities, in source file nand8.vhd
-    Info (12022): Found design unit 1: nand_8-genericType
-    Info (12023): Found entity 1: nand_8
+Info (12021): Found 2 design units, including 1 entities, in source file bin2hex_tester.vhd
+    Info (12022): Found design unit 1: bin2hex_tester-testbench
+    Info (12023): Found entity 1: bin2hex_tester
+Info (12021): Found 3 design units, including 1 entities, in source file bin2hex.vhd
+    Info (12022): Found design unit 1: bin2hex-behavioral
+    Info (12022): Found design unit 2: bin2hex-blank_zero
+    Info (12023): Found entity 1: bin2hex
+Info (12021): Found 2 design units, including 1 entities, in source file comparelogic.vhd
+    Info (12022): Found design unit 1: CompareLogic-compare
+    Info (12023): Found entity 1: CompareLogic
+Info (12021): Found 2 design units, including 1 entities, in source file count_ones.vhd
+    Info (12022): Found design unit 1: count_ones-behavioural
+    Info (12023): Found entity 1: count_ones
+Info (12021): Found 2 design units, including 1 entities, in source file guess_game.vhd
+    Info (12022): Found design unit 1: guess_game-guessgame
+    Info (12023): Found entity 1: guess_game
+Info (12021): Found 2 design units, including 1 entities, in source file latch.vhd
+    Info (12022): Found design unit 1: generic_latch-latch
+    Info (12023): Found entity 1: generic_latch
 Warning (12090): Entity "mux" obtained from "mux.vhd" instead of from Quartus II megafunction library
 Info (12021): Found 4 design units, including 1 entities, in source file mux.vhd
     Info (12022): Found design unit 1: mux-muxFour
     Info (12022): Found design unit 2: mux-muxTwo
     Info (12022): Found design unit 3: mux-mux4In
     Info (12023): Found entity 1: mux
-Info (12021): Found 2 design units, including 1 entities, in source file latch.vhd
-    Info (12022): Found design unit 1: guesslatch-latch
-    Info (12023): Found entity 1: guesslatch
-Info (12021): Found 2 design units, including 1 entities, in source file guess_game.vhd
-    Info (12022): Found design unit 1: guess_game-guessgame
-    Info (12023): Found entity 1: guess_game
-Info (12021): Found 2 design units, including 1 entities, in source file countonestester.vhd
-    Info (12022): Found design unit 1: countOnesTester-rtl
-    Info (12023): Found entity 1: countOnesTester
-Info (12021): Found 2 design units, including 1 entities, in source file countones.vhd
-    Info (12022): Found design unit 1: CountOnes-Count
-    Info (12023): Found entity 1: CountOnes
-Info (12021): Found 2 design units, including 1 entities, in source file comparelogic.vhd
-    Info (12022): Found design unit 1: CompareLogic-compare
-    Info (12023): Found entity 1: CompareLogic
-Info (12021): Found 3 design units, including 1 entities, in source file bin2sevenseg.vhd
-    Info (12022): Found design unit 1: bin2hex-behavioral
-    Info (12022): Found design unit 2: bin2hex-BlankZero
-    Info (12023): Found entity 1: bin2hex
-Info (12127): Elaborating entity "test_bench" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at test_bench.vhd(18): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Info (12128): Elaborating entity "two_player_guess_game" for hierarchy "two_player_guess_game:TwoPlayerGuessGame"
-Critical Warning (10920): VHDL Incomplete Partial Association warning at two_player_guess_game.vhd(36): port or argument "bin" has 3/4 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at two_player_guess_game.vhd(69): port or argument "inSelect" has 1/2 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at two_player_guess_game.vhd(69): port or argument "inA" has 13/14 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at two_player_guess_game.vhd(69): port or argument "inB" has 13/14 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at two_player_guess_game.vhd(69): port or argument "inC" has 6/14 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at two_player_guess_game.vhd(69): port or argument "inD" has 13/14 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at two_player_guess_game.vhd(69): port or argument "o" has 13/14 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at two_player_guess_game.vhd(69): port or argument "o1" has 13/14 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at two_player_guess_game.vhd(69): port or argument "o2" has 6/14 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at two_player_guess_game.vhd(69): port or argument "o3" has 13/14 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at two_player_guess_game.vhd(69): port or argument "o4" has 13/14 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at two_player_guess_game.vhd(69): port or argument "o5" has 13/14 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at two_player_guess_game.vhd(69): port or argument "o6" has 6/14 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at two_player_guess_game.vhd(69): port or argument "o7" has 13/14 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at two_player_guess_game.vhd(92): port or argument "inSelect" has 1/2 unassociated elements
-Info (12129): Elaborating entity "bin2hex" using architecture "A:behavioral" for hierarchy "two_player_guess_game:TwoPlayerGuessGame|bin2hex:displayPlayer"
-Info (12128): Elaborating entity "guess_game" for hierarchy "two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame"
-Critical Warning (10920): VHDL Incomplete Partial Association warning at guess_game.vhd(78): port or argument "inSelect" has 1/2 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at guess_game.vhd(78): port or argument "inA" has 6/14 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at guess_game.vhd(78): port or argument "inB" has 6/14 unassociated elements
-Critical Warning (10920): VHDL Incomplete Partial Association warning at guess_game.vhd(78): port or argument "o" has 6/14 unassociated elements
-Info (12129): Elaborating entity "bin2hex" using architecture "A:blankzero" for hierarchy "two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|bin2hex:displayTens"
-Info (12128): Elaborating entity "guesslatch" for hierarchy "two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|guesslatch:Latcher"
-Warning (10631): VHDL Process Statement warning at latch.vhd(18): inferring latch(es) for signal or variable "qsig", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "qsig[0]" at latch.vhd(18)
-Info (10041): Inferred latch for "qsig[1]" at latch.vhd(18)
-Info (10041): Inferred latch for "qsig[2]" at latch.vhd(18)
-Info (10041): Inferred latch for "qsig[3]" at latch.vhd(18)
-Info (10041): Inferred latch for "qsig[4]" at latch.vhd(18)
-Info (10041): Inferred latch for "qsig[5]" at latch.vhd(18)
-Info (10041): Inferred latch for "qsig[6]" at latch.vhd(18)
-Info (10041): Inferred latch for "qsig[7]" at latch.vhd(18)
-Info (12129): Elaborating entity "CompareLogic" using architecture "A:compare" for hierarchy "two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|CompareLogic:Compare"
-Info (12129): Elaborating entity "mux" using architecture "A:muxfour" for hierarchy "two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|mux:MultiplexFourOne"
-Warning (10873): Using initial value X (don't care) for net "o1" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o2" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o3" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o4" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o5" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o6" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o7" at mux.vhd(12)
-Info (12129): Elaborating entity "mux" using architecture "A:muxtwo" for hierarchy "two_player_guess_game:TwoPlayerGuessGame|guess_game:playerOneGame|mux:MultiplexTwoOne"
-Warning (10873): Using initial value X (don't care) for net "o1" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o2" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o3" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o4" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o5" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o6" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o7" at mux.vhd(12)
-Info (12129): Elaborating entity "mux" using architecture "A:mux4in" for hierarchy "two_player_guess_game:TwoPlayerGuessGame|mux:MultiplexPlayerSelect"
-Warning (10631): VHDL Process Statement warning at mux.vhd(55): inferring latch(es) for signal or variable "o", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at mux.vhd(55): inferring latch(es) for signal or variable "o1", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at mux.vhd(55): inferring latch(es) for signal or variable "o2", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at mux.vhd(55): inferring latch(es) for signal or variable "o3", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at mux.vhd(55): inferring latch(es) for signal or variable "o4", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at mux.vhd(55): inferring latch(es) for signal or variable "o5", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at mux.vhd(55): inferring latch(es) for signal or variable "o6", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at mux.vhd(55): inferring latch(es) for signal or variable "o7", which holds its previous value in one or more paths through the process
-Warning (10873): Using initial value X (don't care) for net "o[13..1]" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o1[13..1]" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o2[13..8]" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o3[13..1]" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o4[13..1]" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o5[13..1]" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o6[13..8]" at mux.vhd(12)
-Warning (10873): Using initial value X (don't care) for net "o7[13..1]" at mux.vhd(12)
-Info (10041): Inferred latch for "o7[0]" at mux.vhd(55)
-Info (10041): Inferred latch for "o6[0]" at mux.vhd(55)
-Info (10041): Inferred latch for "o6[1]" at mux.vhd(55)
-Info (10041): Inferred latch for "o6[2]" at mux.vhd(55)
-Info (10041): Inferred latch for "o6[3]" at mux.vhd(55)
-Info (10041): Inferred latch for "o6[4]" at mux.vhd(55)
-Info (10041): Inferred latch for "o6[5]" at mux.vhd(55)
-Info (10041): Inferred latch for "o6[6]" at mux.vhd(55)
-Info (10041): Inferred latch for "o6[7]" at mux.vhd(55)
-Info (10041): Inferred latch for "o5[0]" at mux.vhd(55)
-Info (10041): Inferred latch for "o4[0]" at mux.vhd(55)
-Info (10041): Inferred latch for "o3[0]" at mux.vhd(55)
-Info (10041): Inferred latch for "o2[0]" at mux.vhd(55)
-Info (10041): Inferred latch for "o2[1]" at mux.vhd(55)
-Info (10041): Inferred latch for "o2[2]" at mux.vhd(55)
-Info (10041): Inferred latch for "o2[3]" at mux.vhd(55)
-Info (10041): Inferred latch for "o2[4]" at mux.vhd(55)
-Info (10041): Inferred latch for "o2[5]" at mux.vhd(55)
-Info (10041): Inferred latch for "o2[6]" at mux.vhd(55)
-Info (10041): Inferred latch for "o2[7]" at mux.vhd(55)
-Info (10041): Inferred latch for "o1[0]" at mux.vhd(55)
-Info (10041): Inferred latch for "o[0]" at mux.vhd(55)
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC
-    Warning (13410): Pin "HEX2[1]" is stuck at VCC
-    Warning (13410): Pin "HEX2[2]" is stuck at VCC
-    Warning (13410): Pin "HEX2[3]" is stuck at VCC
-    Warning (13410): Pin "HEX2[4]" is stuck at VCC
-    Warning (13410): Pin "HEX2[5]" is stuck at VCC
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC
-    Warning (13410): Pin "HEX3[0]" is stuck at VCC
-    Warning (13410): Pin "HEX3[1]" is stuck at VCC
-    Warning (13410): Pin "HEX3[2]" is stuck at VCC
-    Warning (13410): Pin "HEX3[3]" is stuck at VCC
-    Warning (13410): Pin "HEX3[4]" is stuck at VCC
-    Warning (13410): Pin "HEX3[5]" is stuck at VCC
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC
-    Warning (13410): Pin "HEX4[0]" is stuck at VCC
-    Warning (13410): Pin "HEX4[1]" is stuck at VCC
-    Warning (13410): Pin "HEX4[2]" is stuck at VCC
-    Warning (13410): Pin "HEX4[3]" is stuck at VCC
-    Warning (13410): Pin "HEX4[4]" is stuck at VCC
-    Warning (13410): Pin "HEX4[5]" is stuck at VCC
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC
-    Warning (13410): Pin "HEX5[3]" is stuck at VCC
-    Warning (13410): Pin "HEX5[4]" is stuck at VCC
-    Warning (13410): Pin "HEX5[5]" is stuck at VCC
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC
-    Warning (13410): Pin "HEX6[1]" is stuck at GND
-    Warning (13410): Pin "HEX6[2]" is stuck at GND
-    Warning (13410): Pin "HEX6[6]" is stuck at VCC
-    Warning (13410): Pin "HEX7[0]" is stuck at VCC
-    Warning (13410): Pin "HEX7[1]" is stuck at VCC
-    Warning (13410): Pin "HEX7[2]" is stuck at VCC
-    Warning (13410): Pin "HEX7[3]" is stuck at VCC
-    Warning (13410): Pin "HEX7[4]" is stuck at VCC
-    Warning (13410): Pin "HEX7[5]" is stuck at VCC
-    Warning (13410): Pin "HEX7[6]" is stuck at VCC
-    Warning (13410): Pin "LEDR[0]" is stuck at GND
-    Warning (13410): Pin "LEDR[1]" is stuck at GND
-    Warning (13410): Pin "LEDR[2]" is stuck at GND
-    Warning (13410): Pin "LEDR[3]" is stuck at GND
-    Warning (13410): Pin "LEDR[4]" is stuck at GND
-    Warning (13410): Pin "LEDR[5]" is stuck at GND
-    Warning (13410): Pin "LEDR[6]" is stuck at GND
-    Warning (13410): Pin "LEDR[7]" is stuck at GND
-    Warning (13410): Pin "LEDR[8]" is stuck at GND
-    Warning (13410): Pin "LEDR[9]" is stuck at GND
-    Warning (13410): Pin "LEDR[10]" is stuck at GND
-    Warning (13410): Pin "LEDR[11]" is stuck at GND
-    Warning (13410): Pin "LEDR[12]" is stuck at GND
-    Warning (13410): Pin "LEDR[13]" is stuck at GND
-    Warning (13410): Pin "LEDR[14]" is stuck at GND
-    Warning (13410): Pin "LEDR[15]" is stuck at GND
-    Warning (13410): Pin "LEDR[16]" is stuck at GND
-    Warning (13410): Pin "LEDR[17]" is stuck at GND
+Info (12021): Found 2 design units, including 1 entities, in source file nand_8_tester.vhd
+    Info (12022): Found design unit 1: nand_8_tester-testbench
+    Info (12023): Found entity 1: nand_8_tester
+Info (12021): Found 2 design units, including 1 entities, in source file nand_8.vhd
+    Info (12022): Found design unit 1: nand_8-genericType
+    Info (12023): Found entity 1: nand_8
+Info (12021): Found 2 design units, including 1 entities, in source file test_bench.vhd
+    Info (12022): Found design unit 1: test_bench-structural
+    Info (12023): Found entity 1: test_bench
+Info (12021): Found 2 design units, including 1 entities, in source file two_player_guess_game.vhd
+    Info (12022): Found design unit 1: two_player_guess_game-TwoPlayerGame
+    Info (12023): Found entity 1: two_player_guess_game
+Info (12127): Elaborating entity "nand_8_tester" for the top level hierarchy
+Info (12128): Elaborating entity "nand_8" for hierarchy "nand_8:UUT"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 10 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[8]"
-    Warning (15610): No output dependent on input pin "SW[9]"
-    Warning (15610): No output dependent on input pin "SW[10]"
-    Warning (15610): No output dependent on input pin "SW[11]"
-    Warning (15610): No output dependent on input pin "SW[12]"
-    Warning (15610): No output dependent on input pin "SW[13]"
-    Warning (15610): No output dependent on input pin "SW[14]"
-    Warning (15610): No output dependent on input pin "SW[15]"
-    Warning (15610): No output dependent on input pin "SW[16]"
-    Warning (15610): No output dependent on input pin "KEY[2]"
-Info (21057): Implemented 274 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 22 input pins
-    Info (21059): Implemented 74 output pins
-    Info (21061): Implemented 178 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 121 warnings
-    Info: Peak virtual memory: 415 megabytes
-    Info: Processing ended: Mon Apr 20 22:32:00 2020
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:04
+Info (21057): Implemented 12 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 3 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4662 megabytes
+    Info: Processing ended: Tue Apr 21 08:50:39 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

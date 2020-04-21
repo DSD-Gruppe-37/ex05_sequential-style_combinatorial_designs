@@ -19,10 +19,15 @@ BEGIN
         comp <= "10";
 
         IF en = '0' THEN
-            comp <= "11" WHEN a > b ELSE
-                "00" WHEN a < b ELSE
-                "01" WHEN a = b ELSE
-                "10";
+            IF a > b THEN
+                comp <= "11";
+            ELSIF a < b THEN
+                comp <= "00";
+            ELSIF a = b THEN
+                comp <= "01";
+            ELSE
+                comp <= "10";
+            END IF;
         END IF;
     END PROCESS;
 END compare;
