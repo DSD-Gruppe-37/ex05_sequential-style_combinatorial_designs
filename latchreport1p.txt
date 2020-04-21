@@ -1,9 +1,9 @@
-Warning (10631): VHDL Process Statement warning at latch.vhd(18): inferring latch(es) for signal or variable "qsig", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "qsig[0]" at latch.vhd(18)
-Info (10041): Inferred latch for "qsig[1]" at latch.vhd(18)
-Info (10041): Inferred latch for "qsig[2]" at latch.vhd(18)
-Info (10041): Inferred latch for "qsig[3]" at latch.vhd(18)
-Info (10041): Inferred latch for "qsig[4]" at latch.vhd(18)
-Info (10041): Inferred latch for "qsig[5]" at latch.vhd(18)
-Info (10041): Inferred latch for "qsig[6]" at latch.vhd(18)
-Info (10041): Inferred latch for "qsig[7]" at latch.vhd(18)
+Warning (10631): VHDL Process Statement warning at latch.vhd(18): inferring latch(es) for signal or variable "q", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "q[0]" at latch.vhd(18)
+Info (10041): Inferred latch for "q[1]" at latch.vhd(18)
+Info (10041): Inferred latch for "q[2]" at latch.vhd(18)
+Info (10041): Inferred latch for "q[3]" at latch.vhd(18)
+Info (10041): Inferred latch for "q[4]" at latch.vhd(18)
+Info (10041): Inferred latch for "q[5]" at latch.vhd(18)
+Info (10041): Inferred latch for "q[6]" at latch.vhd(18)
+Info (10041): Inferred latch for "q[7]" at latch.vhd(18)
